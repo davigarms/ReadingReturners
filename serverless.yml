@@ -8,3 +8,6 @@ reading-returners:
       defaultLambda: readingReturnersDefault
       apiLambda: readingReturnersApi
       imageLambda: readingReturnersImage
+    build:
+      env:
+        APP_URL: 'https://d1grde2885ktde.cloudfront.net'
