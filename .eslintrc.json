@@ -2,6 +2,7 @@
   "plugins": ["react"],
   "extends": ["airbnb"],
   "rules": {
+    "no-unused-expressions": 0,
     "no-underscore-dangle": 0,
     "react/react-in-jsx-scope": 0,
     "semi": 0

@@ -12,7 +12,7 @@ export default function Index() {
       const data = (await fetchAPI(`/book/${id}`))[0] || {}
       SetBook(data)
     }
-    fetchData()
+    id && fetchData()
   }, [id])
 
   return (
