@@ -1,29 +1,32 @@
 import { fetchAPI } from 'lib/api'
-import PropTypes from 'prop-types'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 
-export default function Index({ book }) {
+export default function Index() {
+  const router = useRouter()
+  const { id } = router.query
+  const [book, SetBook] = useState()
+
+  useEffect(async () => {
+    const fetchData = async () => {
+      const data = (await fetchAPI(`/book/${id}`))[0] || {}
+      SetBook(data)
+    }
+    fetchData()
+  }, [id])
+
   return (
-    <ul>
-      <li>
-        <h3>{book.title || 'Book not found'}</h3>
-        <h4>{book.author || ''}</h4>
-      </li>
-    </ul>
+    <div>
+      {book ? (
+        <ul>
+          <li>
+            <h3>{book.title || 'Book not found'}</h3>
+            <h4>{book.author || ''}</h4>
+          </li>
+        </ul>
+      ) : (
+        'Loading...'
+      )}
+    </div>
   )
-}
-
-export async function getServerSideProps(context) {
-  const { params } = context
-  const book = (await fetchAPI(`'/book/'${params.id}`))[0] || {}
-  return {
-    props: { book },
-  }
-}
-
-Index.propTypes = {
-  book: PropTypes.shape({
-    _id: PropTypes.string,
-    title: PropTypes.string,
-    author: PropTypes.string,
-  }).isRequired,
 }
