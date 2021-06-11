@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy": "serverless"
+    "deploy": "serverless",
+    "format": "prettier --ignore-path .gitignore --write .",
+    "lint": "eslint --ext .jsx --ext .js src/"
   },
   "husky": {
     "hooks": {
@@ -16,7 +18,7 @@
   "lint-staged": {
     "src/**/*.{js,jsx}": [
       "eslint",
-      "pretty-quick — staged",
+      "prettier --ignore-path .gitignore --write .",
       "git add"
     ]
   },
@@ -25,12 +27,15 @@
     "mongoose": "^5.12.13",
     "next": "10.0.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "prop-types": "^15.7.2"
   },
   "devDependencies": {
+    "eslint": "^7.28.0",
     "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
-    "eslinter": "^3.2.1",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.1",

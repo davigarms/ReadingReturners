@@ -1,6 +1,17 @@
 {
-    "extends": ["airbnb", "prettier"],
-    "plugins": [
-        "react"
-    ]
+  "plugins": ["react"],
+  "extends": ["airbnb"],
+  "rules": {
+    "no-underscore-dangle": 0,
+    "react/react-in-jsx-scope": 0,
+    "semi": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules", "src"]
+      }
+    }
+  },
+  "globals": { "fetch": false }
 }

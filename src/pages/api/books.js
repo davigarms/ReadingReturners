@@ -1,5 +1,5 @@
-import connectDB from '@/utils/mongodb'
-import booksModel from '@/models/books'
+import connectDB from 'utils/mongodb'
+import booksModel from 'models/books'
 
 const handler = async (req, res) => {
   if (req.method === 'GET') {

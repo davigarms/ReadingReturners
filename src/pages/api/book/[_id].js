@@ -1,10 +1,10 @@
-import connectDB from '@/utils/mongodb'
-import booksModel from '@/models/books'
+import connectDB from 'utils/mongodb'
+import booksModel from 'models/books'
 import mongoose from 'mongoose'
 
 const handler = async (req, res) => {
   const {
-    query: { _id, name },
+    query: { _id },
     method,
   } = req
 
