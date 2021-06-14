@@ -1,0 +1,127 @@
+/**
+ * Do not edit directly
+ * Generated on Mon, 14 Jun 2021 23:15:32 GMT
+ */
+
+module.exports = {
+  borderWidths: {
+    chunky: '8px',
+    fat: '4px',
+    regular: '2px',
+    hairline: '1px',
+  },
+  colors: {
+    green3: 'rgba(111, 207, 151, 1)',
+    green2: 'rgba(39, 174, 96, 1)',
+    green1: 'rgba(33, 150, 83, 1)',
+    blue3: 'rgba(86, 204, 242, 0.8)',
+    blue2: 'rgba(45, 156, 219, 0.9)',
+    blue1: 'rgba(47, 128, 237, 1)',
+    yellow: 'rgba(242, 201, 76, 1)',
+    orange: 'rgba(242, 153, 74, 1)',
+    red: 'rgba(235, 87, 87, 1)',
+    neon: 'rgba(228, 255, 193, 1)',
+    gray5: 'rgba(242, 242, 242, 1)',
+    gray4: 'rgba(224, 224, 224, 1)',
+    gray3: 'rgba(189, 189, 189, 1)',
+    gray2: 'rgba(130, 130, 130, 1)',
+    gray1: 'rgba(79, 79, 79, 1)',
+    white: 'rgba(255, 255, 255, 1)',
+    black: 'rgba(51, 51, 51, 1)',
+  },
+  delays: {
+    veryLong: 1,
+    long: 0.6,
+    medium: 0.25,
+    short: 0.15,
+  },
+  durations: {
+    veryLong: 1,
+    long: 0.6,
+    medium: 0.25,
+    short: 0.15,
+  },
+  easings: {
+    easeInOutSine: 'cubic-bezier(0.37, 0, 0.63, 1)',
+    easeOutSine: 'cubic-bezier(0.61, 1, 0.88, 1)',
+    easeInSine: 'cubic-bezier(0.12, 0, 0.39, 0)',
+  },
+  fontFamilies: {
+    bold: 'Helvetica Neue',
+    medium: 'Helvetica Neue',
+    regular: 'Helvetica Neue',
+    light: 'Helvetica Neue',
+  },
+  fontSizes: {
+    sub: '0.75rem',
+    paragraph: '1rem',
+    h6: '1.125rem',
+    h5: '1.25rem',
+    h4: '1.625rem',
+    h3: '2rem',
+    h2: '2.5rem',
+    h1: '3rem',
+  },
+  fontWeights: {
+    bold: 700,
+    medium: 500,
+    regular: 400,
+    light: 300,
+  },
+  letterSpacings: {
+    tight: '-0.045em',
+    wide: '0.05em',
+    regular: '0em',
+  },
+  lineHeights: {
+    xs: '1.00',
+    s: '1.35',
+    m: '1.45',
+    l: '1.65',
+  },
+  mediaQueries: {
+    mobileSm: '320px',
+    mobileMd: '480px',
+    mobileLg: '580px',
+    mobileMax: '767px',
+    tabletMin: '768px',
+    tabletMax: '1024px',
+    desktopMd: '1180px',
+    desktopLg: '1440px',
+    wide: '1920px',
+  },
+  opacities: {
+    opaque: 1,
+    disabled: 0.65,
+    semiOpaque: 0.5,
+    transparent: 0,
+  },
+  radii: {
+    circle: '100px',
+    soft: '8px',
+    rounded: '4px',
+    hard: '0px',
+  },
+  shadows: {
+    deepMulti:
+      '0px 4px 20px rgba(0, 0, 0, 0.1), 0px 4px 4px rgba(0, 0, 0, 0.17)',
+    deep: '3px 3px 3px rgba(196, 196, 196, 0.75)',
+    medium: '0px 0px 5px rgba(0, 0, 0, 0.5)',
+    soft: '0px 0px 5px rgba(196, 196, 196, 1)',
+  },
+  spacing: {
+    huge: '6rem',
+    large: '4rem',
+    big: '3rem',
+    medium: '2rem',
+    small: '1rem',
+    tiny: '0.5rem',
+  },
+  zIndices: {
+    top: 100,
+    focus: 10,
+    higher: 2,
+    high: 1,
+    regular: 0,
+  },
+}

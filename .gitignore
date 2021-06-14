@@ -36,5 +36,7 @@ yarn-error.log*
 .vercel
 
 #serverless build files
-.serverless
-.serverless_nextjs
+.serverless/
+.serverless_nextjs/
+
+figmagic/raw/

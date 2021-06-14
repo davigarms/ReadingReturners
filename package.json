@@ -8,7 +8,10 @@
     "start": "next start",
     "deploy": "serverless",
     "format": "prettier --ignore-path .gitignore --write .",
-    "lint": "eslint --ext .jsx --ext .js src/"
+    "lint": "eslint --ext .jsx --ext .js src/",
+    "fetch-figma": "npx figmagic",
+    "build-figma": "npx figmagic && node build-dictionary.js",
+    "build-dictionary": "node build-dictionary.js"
   },
   "husky": {
     "hooks": {
@@ -23,12 +26,14 @@
     ]
   },
   "dependencies": {
+    "figmagic": "^4.2.16",
+    "style-dictionary": "^3.0.1",
     "mongodb-client-encryption": "^1.2.5",
     "mongoose": "^5.12.13",
     "next": "10.0.0",
+    "prop-types": "^15.7.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "prop-types": "^15.7.2"
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
     "eslint": "^7.28.0",

@@ -1,0 +1,10 @@
+{
+  "figmaData": "figma.json",
+  "figmagicFolder": "figmagic/raw",
+  "outputFormatTokens": "json",
+  "outputFormatCss": "js",
+  "outputFolderTokens": "figmagic/dictionary",
+  "syncGraphics": false,
+  "spacingUnit": "rem",
+  "usePostscriptFontNames": false
+}
