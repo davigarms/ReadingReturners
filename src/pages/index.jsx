@@ -1,5 +1,6 @@
 import { fetchAPI } from 'lib/api'
 import { PropTypes } from 'prop-types'
+import { spacing, colors } from 'styles/dictionary'
 
 export default function Index({ books }) {
   return (
@@ -19,6 +20,19 @@ export default function Index({ books }) {
           <h3>No books found</h3>
         </li>
       )}
+
+      <style jsx>
+        {`
+          ul {
+            padding: ${spacing.small};
+            background-color: ${colors.yellow};
+
+            li {
+              margin-left: ${spacing.small};
+            }
+          }
+        `}
+      </style>
     </ul>
   )
 }
