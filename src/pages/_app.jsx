@@ -1,3 +1,4 @@
+import 'modern-reset/reset.css'
 import 'styles/globals.css'
 
 function MyApp({ Component, pageProps }) {

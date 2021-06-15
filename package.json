@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "figmagic": "^4.2.16",
+    "modern-reset": "^0.1.0",
     "mongodb-client-encryption": "^1.2.5",
     "mongoose": "^5.12.13",
     "next": "10.0.0",

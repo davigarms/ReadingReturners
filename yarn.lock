@@ -6579,6 +6579,11 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
   resolved "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
+modern-reset@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/modern-reset/-/modern-reset-0.1.0.tgz#036cd11008ace4b95e7583917664e07352748fce"
+  integrity sha512-a4yfgeG8wdzhPfwpM5EYRq6hJ45TrGj3NYjbgBuH2hIS5JG9rAAnrbZJzFIeMP9rTcHkuGjcm11ZpOM7wZVOfA==
+
 mongodb-client-encryption@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/mongodb-client-encryption/-/mongodb-client-encryption-1.2.5.tgz#947734ec4223a263a00edec77dccacc24bbf925d"

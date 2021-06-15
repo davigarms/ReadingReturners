@@ -1,6 +1,6 @@
 import { fetchAPI } from 'lib/api'
 import { PropTypes } from 'prop-types'
-import { spacing, colors } from 'styles/dictionary'
+import { spacing, colors, fontWeights } from 'styles/dictionary'
 
 export default function Index({ books }) {
   return (
@@ -26,8 +26,12 @@ export default function Index({ books }) {
             padding: ${spacing.small};
             background-color: ${colors.yellow};
             li {
-              margin-left: ${spacing.small};
+              margin: ${spacing.small};
             }
+          }
+
+          h3 {
+            font-weight: ${fontWeights.bold};
           }
         `}
       </style>

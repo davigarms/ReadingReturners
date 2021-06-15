@@ -1,7 +1,7 @@
 import { useFetchAPI } from 'lib/api'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import { spacing, colors } from 'styles/dictionary'
+import { spacing, colors, fontWeights } from 'styles/dictionary'
 
 export default function Index() {
   const router = useRouter()
@@ -30,11 +30,14 @@ export default function Index() {
         {`
           ul {
             padding: ${spacing.small};
-            background-color: ${colors.blue1};
-            color: ${colors.white};
+            background-color: ${colors.yellow};
             li {
-              margin-left: ${spacing.small};
+              margin: ${spacing.small};
             }
+          }
+
+          h3 {
+            font-weight: ${fontWeights.bold};
           }
         `}
       </style>
