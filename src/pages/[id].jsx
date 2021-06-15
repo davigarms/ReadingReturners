@@ -1,19 +1,21 @@
 import { fetchAPI } from 'lib/api'
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 export default function Index() {
   const router = useRouter()
   const { id } = router.query
-  const [book, SetBook] = useState()
+  const [book, setBook] = useState()
 
-  useEffect(async () => {
-    const fetchData = async () => {
-      const data = (await fetchAPI(`/book/${id}`))[0] || {}
-      SetBook(data)
-    }
-    id && fetchData()
+  // const handler = async (req, res) => {
+  const fetchData = useCallback(async () => {
+    const data = (await fetchAPI(`/book/${id}`))[0] || {}
+    setBook(data)
   }, [id])
+
+  useEffect(() => {
+    id && fetchData(id)
+  }, [id, fetchData])
 
   return (
     <div>
