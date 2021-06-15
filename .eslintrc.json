@@ -19,6 +19,7 @@
     "jsx-a11y/anchor-is-valid": 0,
     "no-unused-vars": 1,
     "react/prop-types": 1,
+    "no-console": 1,
     "semi": 0
   },
   "settings": {

@@ -1,20 +1,17 @@
-import { fetchAPI } from 'lib/api'
+import { useFetchAPI } from 'lib/api'
 import { useRouter } from 'next/router'
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { spacing, colors } from 'styles/dictionary'
 
 export default function Index() {
   const router = useRouter()
   const { id } = router.query
   const [book, setBook] = useState()
 
-  // const handler = async (req, res) => {
-  const fetchData = useCallback(async () => {
-    const data = (await fetchAPI(`/book/${id}`))[0] || {}
-    setBook(data)
-  }, [id])
+  const fetchData = useFetchAPI('/book', id, setBook)
 
   useEffect(() => {
-    id && fetchData(id)
+    id && fetchData()
   }, [id, fetchData])
 
   return (
@@ -29,6 +26,18 @@ export default function Index() {
       ) : (
         'Loading...'
       )}
+      <style jsx>
+        {`
+          ul {
+            padding: ${spacing.small};
+            background-color: ${colors.blue1};
+            color: ${colors.white};
+            li {
+              margin-left: ${spacing.small};
+            }
+          }
+        `}
+      </style>
     </div>
   )
 }
