@@ -1,0 +1,14 @@
+reading-returners:
+  component: '@sls-next/serverless-component@1.19.0'
+  #optional
+  inputs:
+    bucketName:
+    bucketRegion:
+    logLambdaExecutionTimes:
+    name:
+      defaultLambda:
+      apiLambda:
+      imageLambda:
+    build:
+      env:
+        APP_URL:

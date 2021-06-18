@@ -58,23 +58,45 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+## Database
+
+MongoDB and Mongoose are used to store and model application data. A MongoDB URI should be defined in a `.env` file, according to the example provided.
+
 ## Styling
 
 [Styled JSX](https://github.com/vercel/styled-jsx 'Styled JSX') is utilised for declarative CSS-in-JS styling.
 
 [Figmagic](https://github.com/mikaelvesavuori/figmagic 'Figmagic') and [Amazon Styles Dictionary](https://amzn.github.io/style-dictionary/ 'Amazon Styles Dictionary') are employed to generate the design tokens to style the app.
 
-Figmagic fetches a document directly from Figma and generates a JSON file with design tokens, while Styles Dictionary exports them in a JS module to apply the defined values consistently across the entire project.
+Figmagic fetches a document directly from Figma and generates JSON files with design tokens, while Styles Dictionary exports them in a JS module, allowing the application of the defined values consistently across the app.
 
-Please note that Figmagic requires a Figma document from which tokens are fetched. A template can be found at:
+Please note that Figmagic requires a Figma document including the tokens. A template can be found at:
 
 https://www.figma.com/community/file/821094451476848226/Figmagic-%E2%80%94-Design-System-for-Tokens.
 
-Tokens can also be generated directly from a JSON file using Styles Dictionary.
+You will also need a Figma API key and the URL id of the document with the tokens. More information can be found in the[ Figmagic documentation](https://github.com/mikaelvesavuori/figmagic ' Figmagic documentation').
 
-They can be run together or separately for convenience.
+The JSON files are located in `figmagic/dictionary` folder.
 
-**To run both, you should use:**
+**To fetch Figma tokens and update the JSON files, run:**
+
+```bash
+npm run fetch-figma
+# or
+yarn fetch-figma
+```
+
+Tokens can also be generated directly from the JSON files using Styles Dictionary. You can edit them manually without the use of Figma API.
+
+**To generate the JS module from the JSON files, run:**
+
+```bash
+npm run build-dictionary
+# or
+yarn build-dictionary
+```
+
+**You can also run Figmagic and Styles Dictionary in a single command using:**
 
 ```bash
 npm run build-figma
@@ -82,23 +104,15 @@ npm run build-figma
 yarn build-figma
 ```
 
-**Or to run the separate commands:**
-
-```bash
-npm run fetch-figma
-# or
-yarn fetch-figma
-
-npm run build-dictionary
-# or
-yarn build-dictionary
-```
-
 ## Deployment
 
-[Serverless Next.js Component](https://github.com/serverless-nextjs/serverless-next.js 'Serverless Next.js Component') is used for deployment in AWS using S3, Lamba@Edge and CloudFront, for static pages, APIs and cache. The configuration can be found in the file `serverless.yml`.
+[Serverless Next.js Component](https://github.com/serverless-nextjs/serverless-next.js 'Serverless Next.js Component') is used for deployment in AWS using S3, Lamba@Edge and CloudFront, for static pages, APIs and fast content delivery.
 
-**To deploy this project run:**
+The configuration is defined in the `serverless.yml` file, following the example provided.
+
+You should also use this file to add and access environment variables at build time.
+
+**To deploy this project, run:**
 
 ```bash
   npm run deploy

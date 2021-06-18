@@ -40,3 +40,5 @@ yarn-error.log*
 .serverless_nextjs/
 
 figmagic/raw/
+
+serverless.yml
