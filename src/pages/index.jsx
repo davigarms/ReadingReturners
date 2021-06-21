@@ -1,30 +1,15 @@
 import { fetchAPI } from 'lib/api'
 import { PropTypes } from 'prop-types'
-import styled from 'styled-components'
-import { spacing, colors, fontWeights } from 'styles/dictionary'
-
-const List = styled.ul`
-  padding: ${spacing.small};
-  background-color: ${colors.blue1};
-  color: ${colors.white};
-  li {
-    margin: ${spacing.small};
-  }
-
-  h3 {
-    font-weight: ${fontWeights.bold};
-  }
-`
 
 export default function Index({ books }) {
   return (
-    <List>
+    <ul>
       {books.length > 0 ? (
         books.map((book) => {
           const content = (
             <li key={book._id}>
-              <h3>{book.title}</h3>
-              <h4>{book.author}</h4>
+              <h6>{book.title}</h6>
+              <p>{book.author}</p>
             </li>
           )
           return content
@@ -34,7 +19,7 @@ export default function Index({ books }) {
           <h3>No books found</h3>
         </li>
       )}
-    </List>
+    </ul>
   )
 }
 

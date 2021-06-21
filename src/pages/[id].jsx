@@ -19,28 +19,13 @@ export default function Index() {
       {book ? (
         <ul>
           <li>
-            <h3>{book.title || 'Book not found'}</h3>
-            <h4>{book.author || ''}</h4>
+            <h6>{book.title || 'Book not found'}</h6>
+            <p>{book.author || ''}</p>
           </li>
         </ul>
       ) : (
         'Loading...'
       )}
-      <style jsx>
-        {`
-          ul {
-            padding: ${spacing.small};
-            background-color: ${colors.yellow};
-            li {
-              margin: ${spacing.small};
-            }
-          }
-
-          h3 {
-            font-weight: ${fontWeights.bold};
-          }
-        `}
-      </style>
     </div>
   )
 }
