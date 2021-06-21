@@ -1,24 +1,28 @@
 import { fetchAPI } from 'lib/api'
 import { PropTypes } from 'prop-types'
+import Stack from 'styles/utils/stack'
+import { spacing } from 'styles/dictionary'
 
 export default function Index({ books }) {
   return (
     <ul>
-      {books.length > 0 ? (
-        books.map((book) => {
-          const content = (
-            <li key={book._id}>
-              <h6>{book.title}</h6>
-              <p>{book.author}</p>
-            </li>
-          )
-          return content
-        })
-      ) : (
-        <li>
-          <h3>No books found</h3>
-        </li>
-      )}
+      <Stack spacing={spacing.small}>
+        {books.length > 0 ? (
+          books.map((book) => {
+            const content = (
+              <li key={book._id}>
+                <h6>{book.title}</h6>
+                <p>{book.author}</p>
+              </li>
+            )
+            return content
+          })
+        ) : (
+          <li>
+            <h3>No books found</h3>
+          </li>
+        )}
+      </Stack>
     </ul>
   )
 }
