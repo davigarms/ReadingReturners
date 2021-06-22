@@ -15,6 +15,10 @@ const StyleDictionary = require('style-dictionary').extend({
 
           output[pathParts] = { ...object }
 
+          for (const key in output[pathParts]) {
+            output[pathParts][key] = { value: output[pathParts][key] }
+          }
+
           return output
         } catch (error) {
           return error
@@ -27,7 +31,7 @@ const StyleDictionary = require('style-dictionary').extend({
     js: {
       transforms: [
         'attribute/cti',
-        'name/cti/camel',
+        'name/cti/constant',
         'time/seconds',
         'content/icon',
         'color/rgb',
@@ -37,7 +41,24 @@ const StyleDictionary = require('style-dictionary').extend({
       files: [
         {
           destination: 'dictionary.js',
-          format: 'javascript/module',
+          format: 'javascript/es6',
+        },
+      ],
+    },
+    css: {
+      transforms: [
+        'attribute/cti',
+        'name/cti/kebab',
+        'time/seconds',
+        'content/icon',
+        'color/rgb',
+        'size/rem',
+      ],
+      buildPath: './src/styles/',
+      files: [
+        {
+          destination: 'dictionary.css',
+          format: 'css/variables',
         },
       ],
     },

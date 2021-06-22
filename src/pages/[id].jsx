@@ -1,7 +1,6 @@
 import { useFetchAPI } from 'lib/api'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import { spacing, colors, fontWeights } from 'styles/dictionary'
 
 export default function Index() {
   const router = useRouter()

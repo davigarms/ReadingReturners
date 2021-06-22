@@ -1,12 +1,12 @@
 import { fetchAPI } from 'lib/api'
 import { PropTypes } from 'prop-types'
 import Stack from 'styles/utils/stack'
-import { spacing } from 'styles/dictionary'
+import { SPACING_SMALL } from '../styles/dictionary'
 
 export default function Index({ books }) {
   return (
     <ul>
-      <Stack spacing={spacing.small}>
+      <Stack spacing={SPACING_SMALL}>
         {books.length > 0 ? (
           books.map((book) => {
             const content = (

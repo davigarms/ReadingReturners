@@ -1,127 +1,93 @@
 /**
  * Do not edit directly
- * Generated on Mon, 14 Jun 2021 23:15:32 GMT
+ * Generated on Tue, 22 Jun 2021 11:58:56 GMT
  */
 
-module.exports = {
-  borderWidths: {
-    chunky: '8px',
-    fat: '4px',
-    regular: '2px',
-    hairline: '1px',
-  },
-  colors: {
-    green3: 'rgba(111, 207, 151, 1)',
-    green2: 'rgba(39, 174, 96, 1)',
-    green1: 'rgba(33, 150, 83, 1)',
-    blue3: 'rgba(86, 204, 242, 0.8)',
-    blue2: 'rgba(45, 156, 219, 0.9)',
-    blue1: 'rgba(47, 128, 237, 1)',
-    yellow: 'rgba(242, 201, 76, 1)',
-    orange: 'rgba(242, 153, 74, 1)',
-    red: 'rgba(235, 87, 87, 1)',
-    neon: 'rgba(228, 255, 193, 1)',
-    gray5: 'rgba(242, 242, 242, 1)',
-    gray4: 'rgba(224, 224, 224, 1)',
-    gray3: 'rgba(189, 189, 189, 1)',
-    gray2: 'rgba(130, 130, 130, 1)',
-    gray1: 'rgba(79, 79, 79, 1)',
-    white: 'rgba(255, 255, 255, 1)',
-    black: 'rgba(51, 51, 51, 1)',
-  },
-  delays: {
-    veryLong: 1,
-    long: 0.6,
-    medium: 0.25,
-    short: 0.15,
-  },
-  durations: {
-    veryLong: 1,
-    long: 0.6,
-    medium: 0.25,
-    short: 0.15,
-  },
-  easings: {
-    easeInOutSine: 'cubic-bezier(0.37, 0, 0.63, 1)',
-    easeOutSine: 'cubic-bezier(0.61, 1, 0.88, 1)',
-    easeInSine: 'cubic-bezier(0.12, 0, 0.39, 0)',
-  },
-  fontFamilies: {
-    bold: 'Helvetica Neue',
-    medium: 'Helvetica Neue',
-    regular: 'Helvetica Neue',
-    light: 'Helvetica Neue',
-  },
-  fontSizes: {
-    sub: '0.75rem',
-    paragraph: '1rem',
-    h6: '1.125rem',
-    h5: '1.25rem',
-    h4: '1.625rem',
-    h3: '2rem',
-    h2: '2.5rem',
-    h1: '3rem',
-  },
-  fontWeights: {
-    bold: 700,
-    medium: 500,
-    regular: 400,
-    light: 300,
-  },
-  letterSpacings: {
-    tight: '-0.045em',
-    wide: '0.05em',
-    regular: '0em',
-  },
-  lineHeights: {
-    xs: '1.00',
-    s: '1.35',
-    m: '1.45',
-    l: '1.65',
-  },
-  mediaQueries: {
-    mobileSm: '320px',
-    mobileMd: '480px',
-    mobileLg: '580px',
-    mobileMax: '767px',
-    tabletMin: '768px',
-    tabletMax: '1024px',
-    desktopMd: '1180px',
-    desktopLg: '1440px',
-    wide: '1920px',
-  },
-  opacities: {
-    opaque: 1,
-    disabled: 0.65,
-    semiOpaque: 0.5,
-    transparent: 0,
-  },
-  radii: {
-    circle: '100px',
-    soft: '8px',
-    rounded: '4px',
-    hard: '0px',
-  },
-  shadows: {
-    deepMulti:
-      '0px 4px 20px rgba(0, 0, 0, 0.1), 0px 4px 4px rgba(0, 0, 0, 0.17)',
-    deep: '3px 3px 3px rgba(196, 196, 196, 0.75)',
-    medium: '0px 0px 5px rgba(0, 0, 0, 0.5)',
-    soft: '0px 0px 5px rgba(196, 196, 196, 1)',
-  },
-  spacing: {
-    huge: '6rem',
-    large: '4rem',
-    big: '3rem',
-    medium: '2rem',
-    small: '1rem',
-    tiny: '0.5rem',
-  },
-  zIndices: {
-    top: 100,
-    focus: 10,
-    higher: 2,
-    high: 1,
-    regular: 0,
-  },
-}
+export const BORDER_WIDTHS_CHUNKY = '8px'
+export const BORDER_WIDTHS_FAT = '4px'
+export const BORDER_WIDTHS_REGULAR = '2px'
+export const BORDER_WIDTHS_HAIRLINE = '1px'
+export const COLORS_GREEN3 = 'rgba(111, 207, 151, 1)'
+export const COLORS_GREEN2 = 'rgba(39, 174, 96, 1)'
+export const COLORS_GREEN1 = 'rgba(33, 150, 83, 1)'
+export const COLORS_BLUE3 = 'rgba(86, 204, 242, 0.8)'
+export const COLORS_BLUE2 = 'rgba(45, 156, 219, 0.9)'
+export const COLORS_BLUE1 = 'rgba(47, 128, 237, 1)'
+export const COLORS_YELLOW = 'rgba(242, 201, 76, 1)'
+export const COLORS_ORANGE = 'rgba(242, 153, 74, 1)'
+export const COLORS_RED = 'rgba(235, 87, 87, 1)'
+export const COLORS_NEON = 'rgba(228, 255, 193, 1)'
+export const COLORS_GRAY5 = 'rgba(242, 242, 242, 1)'
+export const COLORS_GRAY4 = 'rgba(224, 224, 224, 1)'
+export const COLORS_GRAY3 = 'rgba(189, 189, 189, 1)'
+export const COLORS_GRAY2 = 'rgba(130, 130, 130, 1)'
+export const COLORS_GRAY1 = 'rgba(79, 79, 79, 1)'
+export const COLORS_WHITE = 'rgba(255, 255, 255, 1)'
+export const COLORS_BLACK = 'rgba(51, 51, 51, 1)'
+export const DELAYS_VERY_LONG = 1
+export const DELAYS_LONG = 0.6
+export const DELAYS_MEDIUM = 0.25
+export const DELAYS_SHORT = 0.15
+export const DURATIONS_VERY_LONG = 1
+export const DURATIONS_LONG = 0.6
+export const DURATIONS_MEDIUM = 0.25
+export const DURATIONS_SHORT = 0.15
+export const EASINGS_EASE_IN_OUT_SINE = 'cubic-bezier(0.37, 0, 0.63, 1)'
+export const EASINGS_EASE_OUT_SINE = 'cubic-bezier(0.61, 1, 0.88, 1)'
+export const EASINGS_EASE_IN_SINE = 'cubic-bezier(0.12, 0, 0.39, 0)'
+export const FONT_FAMILIES_BOLD = 'Helvetica Neue'
+export const FONT_FAMILIES_MEDIUM = 'Helvetica Neue'
+export const FONT_FAMILIES_REGULAR = 'Helvetica Neue'
+export const FONT_FAMILIES_LIGHT = 'Helvetica Neue'
+export const FONT_SIZES_SUB = '0.75rem'
+export const FONT_SIZES_PARAGRAPH = '1rem'
+export const FONT_SIZES_H6 = '1.125rem'
+export const FONT_SIZES_H5 = '1.25rem'
+export const FONT_SIZES_H4 = '1.625rem'
+export const FONT_SIZES_H3 = '2rem'
+export const FONT_SIZES_H2 = '2.5rem'
+export const FONT_SIZES_H1 = '3rem'
+export const FONT_WEIGHTS_BOLD = 700
+export const FONT_WEIGHTS_MEDIUM = 500
+export const FONT_WEIGHTS_REGULAR = 400
+export const FONT_WEIGHTS_LIGHT = 300
+export const LETTER_SPACINGS_TIGHT = '-0.045em'
+export const LETTER_SPACINGS_WIDE = '0.05em'
+export const LETTER_SPACINGS_REGULAR = '0em'
+export const LINE_HEIGHTS_XS = '1.00'
+export const LINE_HEIGHTS_S = '1.35'
+export const LINE_HEIGHTS_M = '1.45'
+export const LINE_HEIGHTS_L = '1.65'
+export const MEDIA_QUERIES_MOBILE_SM = '320px'
+export const MEDIA_QUERIES_MOBILE_MD = '480px'
+export const MEDIA_QUERIES_MOBILE_LG = '580px'
+export const MEDIA_QUERIES_MOBILE_MAX = '767px'
+export const MEDIA_QUERIES_TABLET_MIN = '768px'
+export const MEDIA_QUERIES_TABLET_MAX = '1024px'
+export const MEDIA_QUERIES_DESKTOP_MD = '1180px'
+export const MEDIA_QUERIES_DESKTOP_LG = '1440px'
+export const MEDIA_QUERIES_WIDE = '1920px'
+export const OPACITIES_OPAQUE = 1
+export const OPACITIES_DISABLED = 0.65
+export const OPACITIES_SEMI_OPAQUE = 0.5
+export const OPACITIES_TRANSPARENT = 0
+export const RADII_CIRCLE = '100px'
+export const RADII_SOFT = '8px'
+export const RADII_ROUNDED = '4px'
+export const RADII_HARD = '0px'
+export const SHADOWS_DEEP_MULTI =
+  '0px 4px 20px rgba(0, 0, 0, 0.1), 0px 4px 4px rgba(0, 0, 0, 0.17)'
+export const SHADOWS_DEEP = '3px 3px 3px rgba(196, 196, 196, 0.75)'
+export const SHADOWS_MEDIUM = '0px 0px 5px rgba(0, 0, 0, 0.5)'
+export const SHADOWS_SOFT = '0px 0px 5px rgba(196, 196, 196, 1)'
+export const SPACING_HUGE = '6rem'
+export const SPACING_LARGE = '4rem'
+export const SPACING_BIG = '3rem'
+export const SPACING_MEDIUM = '2rem'
+export const SPACING_SMALL = '1rem'
+export const SPACING_TINY = '0.5rem'
+export const Z_INDICES_TOP = 100
+export const Z_INDICES_FOCUS = 10
+export const Z_INDICES_HIGHER = 2
+export const Z_INDICES_HIGH = 1
+export const Z_INDICES_REGULAR = 0
