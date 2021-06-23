@@ -10,13 +10,35 @@ const StyleDictionary = require('style-dictionary').extend({
       parse: ({ contents, filePath }) => {
         try {
           const object = JSON.parse(contents)
-          const pathParts = path.basename(filePath).replace('.json', '')
+          const tokenFile = path.basename(filePath).replace('.json', '')
+          const tokenTypes = [
+            { type: 'borderWidths', name: 'borderWidth' },
+            { type: 'colors', name: 'color' },
+            { type: 'delays', name: 'delay' },
+            { type: 'durations', name: 'duration' },
+            { type: 'easings', name: 'easing' },
+            { type: 'fontFamilies', name: 'fontFamily' },
+            { type: 'fontSizes', name: 'fontSize' },
+            { type: 'fontWeights', name: 'fontWeight' },
+            { type: 'letterSpacings', name: 'letterSpacing' },
+            { type: 'lineHeights', name: 'lineHeight' },
+            { type: 'mediaQueries', name: 'breakPoint' },
+            { type: 'opacities', name: 'opacity' },
+            { type: 'radii', name: 'radius' },
+            { type: 'shadows', name: 'shadow' },
+            { type: 'spacing', name: 'spacing' },
+            { type: 'zIndices', name: 'zIndex' },
+          ]
           const output = {}
 
-          output[pathParts] = { ...object }
+          const tokenName = tokenTypes.find((i) => tokenFile === i.type).name
 
-          for (const key in output[pathParts]) {
-            output[pathParts][key] = { value: output[pathParts][key] }
+          output[tokenName] = { ...object }
+
+          for (const key in output[tokenName]) {
+            output[tokenName][key] = {
+              value: output[tokenName][key],
+            }
           }
 
           return output

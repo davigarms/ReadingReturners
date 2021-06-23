@@ -3869,9 +3869,9 @@ dot-qs@0.2.0:
   resolved "https://registry.npmjs.org/dot-qs/-/dot-qs-0.2.0.tgz"
   integrity sha1-02UX/iS3zaYfznpQJqACSvr1pDk=
 
-dotenv@10.0.0, dotenv@^10.0.0:
+dotenv@^10.0.0, dotenv@latest:
   version "10.0.0"
-  resolved "https://registry.npmjs.org/dotenv/-/dotenv-10.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-10.0.0.tgz#3d4227b8fb95f81096cdd2b66653fb2c7085ba81"
   integrity sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==
 
 dotenv@^8.2.0:
@@ -4597,15 +4597,15 @@ figgy-pudding@^3.5.1:
   resolved "https://registry.npmjs.org/figgy-pudding/-/figgy-pudding-3.5.2.tgz"
   integrity sha512-0btnI/H8f2pavGMN8w40mlSKOfTK2SVJmBfBeVIj3kNw0swwgzyRq0d5TJVOwodFmtvpPeWPN/MCcfuWF0Ezbw==
 
-figmagic@^4.2.16:
-  version "4.2.16"
-  resolved "https://registry.yarnpkg.com/figmagic/-/figmagic-4.2.16.tgz#0ec6ceabec386e401f40e3c1edcf5b2e68649f4f"
-  integrity sha512-/bsyghwbhhcwJ9PicahDA2AQ5cNQm3eK4FY73eoPKah97OL9T98PlxV4+xnDsAP/i7NzUCcjEvnJ6LKsAO+xKQ==
+figmagic@^4.2.19:
+  version "4.2.19"
+  resolved "https://registry.yarnpkg.com/figmagic/-/figmagic-4.2.19.tgz#c0f7b41c8fd2dd5662935a2222310a8e617ffd3a"
+  integrity sha512-fvyjSTCp6g3gfUa51Dj14ctN9XGpwLL/8hMvXasw3qRQkBcbtdow1I85BXLTm0ZfJfRvlTtXq9p1DjouSNG2fw==
   dependencies:
-    dotenv "10.0.0"
-    node-fetch "2.6.1"
-    trash "7.2.0"
-    tslib "^2.3.0"
+    dotenv latest
+    node-fetch latest
+    trash latest
+    tslib latest
 
 figures@^2.0.0:
   version "2.0.0"
@@ -6970,9 +6970,9 @@ node-fetch@2.6.0:
   resolved "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.0.tgz"
   integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
 
-node-fetch@2.6.1, node-fetch@^2.6.0, node-fetch@^2.6.1:
+node-fetch@2.6.1, node-fetch@^2.6.0, node-fetch@^2.6.1, node-fetch@latest:
   version "2.6.1"
-  resolved "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.1.tgz"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
 node-html-parser@^1.2.19:
@@ -9639,7 +9639,7 @@ tr46@^1.0.1:
   dependencies:
     punycode "^2.1.0"
 
-trash@7.2.0:
+trash@latest:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/trash/-/trash-7.2.0.tgz#c5ad0c9b13d7e7cad0b4187b3cfe38cd8b39abe2"
   integrity sha512-3bR8Z5aWO8b9qybS6skBoaavH/hX9Onb1RrdIIhJxv9VpH3aBtpbKuAX4rIh/0xpDZ7K4ga36wONk/okbhjTlA==
@@ -9695,7 +9695,7 @@ tslib@^1.9.0:
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.0.3, tslib@^2.3.0:
+tslib@^2.0.3, tslib@latest:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.0.tgz#803b8cdab3e12ba581a4ca41c8839bbb0dacb09e"
   integrity sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==

@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   body {
-    font-family: var(--font-families-regular);
+    font-family: var(--font-family-regular);
     margin: var(--spacing-small);
   }
 
@@ -12,39 +12,39 @@ const GlobalStyle = createGlobalStyle`
   h4,
   h5,
   h6 {
-    font-weight: var(--font-weights-bold);
+    font-weight: var(--font-weight-bold);
   }
 
   h1 {
-    font-size: var(--font-sizes-h1);
+    font-size: var(--font-size-h1);
   }
 
   h2 {
-    font-size: var(--font-sizes-h2);
+    font-size: var(--font-size-h2);
   }
 
   h3 {
-    font-size: var(--font-sizes-h3);
+    font-size: var(--font-size-h3);
   }
 
   h4 {
-    font-size: var(--font-sizes-h4);
+    font-size: var(--font-size-h4);
   }
 
   h5 {
-    font-size: var(--font-sizes-h5);
+    font-size: var(--font-size-h5);
   }
 
   h6 {
-    font-size: var(--font-sizes-h6);
+    font-size: var(--font-size-h6);
   }
 
   p {
-    font-size: var(--font-sizes-paragraph);
+    font-size: var(--font-size-paragraph);
   }
 
   li {
-    border: var(--border-widths-hairline) solid var(--colors-blue1);
+    border: var(--border-width-hairline) solid var(--color-blue1);
   }
 `
 
