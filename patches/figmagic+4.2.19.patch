@@ -1,0 +1,230 @@
+diff --git a/node_modules/figmagic/bin/entities/Token/index.ts b/node_modules/figmagic/bin/entities/Token/index.ts
+index b4667d6..3135d12 100644
+--- a/node_modules/figmagic/bin/entities/Token/index.ts
++++ b/node_modules/figmagic/bin/entities/Token/index.ts
+@@ -74,43 +74,39 @@ class Token {
+   };
+ 
+   private getTokens = (frame: Frame, name: string, config: Config): any => {
++    // const bw = 'borderwidth';
+     const tokenOperations = {
+-      borderwidths: () => makeBorderWidthTokens(frame),
++      borderwidth: () => makeBorderWidthTokens(frame),
+       color: () => makeColorTokens(frame),
+-      colors: () => makeColorTokens(frame),
+-      delays: () => makeDelayTokens(frame),
+-      durations: () => makeDurationTokens(frame),
+-      easings: () => makeEasingTokens(frame),
+-      fontfamilies: () => {
++      delay: () => makeDelayTokens(frame),
++      duration: () => makeDurationTokens(frame),
++      easing: () => makeEasingTokens(frame),
++      fontfamily: () => {
+         if (!config) throw new Error(ErrorExtractTokensNoConfig);
+         return makeFontTokens(frame, config.usePostscriptFontNames);
+       },
+-      fontsizes: () => {
++      fontsize: () => {
+         if (!config) throw new Error(ErrorExtractTokensNoConfig);
+         return makeFontSizeTokens(frame, config.fontUnit, config.remSize);
+       },
+-      fontweights: () => makeFontWeightTokens(frame),
+-      letterspacings: () => {
++      fontweight: () => makeFontWeightTokens(frame),
++      letterspacing: () => {
+         if (!config) throw new Error(ErrorExtractTokensNoConfig);
+         return makeLetterSpacingTokens(frame, config.letterSpacingUnit);
+       },
+-      lineheights: () => makeLineHeightTokens(frame, config.remSize, config.unitlessPrecision),
+-      mediaqueries: () => makeMediaQueryTokens(frame),
+-      opacities: () => {
++      lineheight: () => makeLineHeightTokens(frame, config.remSize, config.unitlessPrecision),
++      breakpoint: () => makeMediaQueryTokens(frame),
++      opacity: () => {
+         if (!config) throw new Error(ErrorExtractTokensNoConfig);
+         return makeOpacityTokens(frame, config.opacitiesUnit);
+       },
+-      radii: () => makeRadiusTokens(frame, config.remSize),
+-      shadows: () => makeShadowTokens(frame),
++      radius: () => makeRadiusTokens(frame, config.remSize),
++      shadow: () => makeShadowTokens(frame),
+       spacing: () => {
+         if (!config) throw new Error(ErrorExtractTokensNoConfig);
+         return makeSpacingTokens(frame, config.spacingUnit, config.remSize);
+       },
+-      spacings: () => {
+-        if (!config) throw new Error(ErrorExtractTokensNoConfig);
+-        return makeSpacingTokens(frame, config.spacingUnit, config.remSize);
+-      },
+-      zindices: () => makeZindexTokens(frame)
++      zindex: () => makeZindexTokens(frame)
+     };
+ 
+     // @ts-ignore
+diff --git a/node_modules/figmagic/bin/frameworks/system/acceptedTokenTypes.ts b/node_modules/figmagic/bin/frameworks/system/acceptedTokenTypes.ts
+index b62d126..51825fd 100644
+--- a/node_modules/figmagic/bin/frameworks/system/acceptedTokenTypes.ts
++++ b/node_modules/figmagic/bin/frameworks/system/acceptedTokenTypes.ts
+@@ -1,20 +1,18 @@
+ export const acceptedTokenTypes: string[] = [
+-  'borderwidths',
++  'borderwidth',
+   'color',
+-  'colors',
+-  'delays',
+-  'durations',
+-  'easings',
+-  'fontfamilies',
+-  'fontsizes',
+-  'fontweights',
+-  'letterspacings',
+-  'lineheights',
+-  'mediaqueries',
+-  'opacities',
+-  'radii',
+-  'shadows',
++  'delay',
++  'duration',
++  'easing',
++  'fontfamily',
++  'fontsize',
++  'fontweight',
++  'letterspacing',
++  'lineheight',
++  'breakpoint',
++  'opacity',
++  'radius',
++  'shadow',
+   'spacing',
+-  'spacings',
+-  'zindices'
++  'zindex'
+ ];
+diff --git a/node_modules/figmagic/build/bin/entities/Token/index.js b/node_modules/figmagic/build/bin/entities/Token/index.js
+index 0a54b52..c7660e7 100644
+--- a/node_modules/figmagic/build/bin/entities/Token/index.js
++++ b/node_modules/figmagic/build/bin/entities/Token/index.js
+@@ -40,48 +40,42 @@ class Token {
+         };
+         this.getTokens = (frame, name, config) => {
+             const tokenOperations = {
+-                borderwidths: () => makeBorderWidthTokens_1.makeBorderWidthTokens(frame),
++                borderwidth: () => makeBorderWidthTokens_1.makeBorderWidthTokens(frame),
+                 color: () => makeColorTokens_1.makeColorTokens(frame),
+-                colors: () => makeColorTokens_1.makeColorTokens(frame),
+-                delays: () => makeDelayTokens_1.makeDelayTokens(frame),
+-                durations: () => makeDurationTokens_1.makeDurationTokens(frame),
+-                easings: () => makeEasingTokens_1.makeEasingTokens(frame),
+-                fontfamilies: () => {
++                delay: () => makeDelayTokens_1.makeDelayTokens(frame),
++                duration: () => makeDurationTokens_1.makeDurationTokens(frame),
++                easing: () => makeEasingTokens_1.makeEasingTokens(frame),
++                fontfamily: () => {
+                     if (!config)
+                         throw new Error(errors_1.ErrorExtractTokensNoConfig);
+                     return makeFontTokens_1.makeFontTokens(frame, config.usePostscriptFontNames);
+                 },
+-                fontsizes: () => {
++                fontsize: () => {
+                     if (!config)
+                         throw new Error(errors_1.ErrorExtractTokensNoConfig);
+                     return makeFontSizeTokens_1.makeFontSizeTokens(frame, config.fontUnit, config.remSize);
+                 },
+-                fontweights: () => makeFontWeightTokens_1.makeFontWeightTokens(frame),
+-                letterspacings: () => {
++                fontweight: () => makeFontWeightTokens_1.makeFontWeightTokens(frame),
++                letterspacing: () => {
+                     if (!config)
+                         throw new Error(errors_1.ErrorExtractTokensNoConfig);
+                     return makeLetterSpacingTokens_1.makeLetterSpacingTokens(frame, config.letterSpacingUnit);
+                 },
+-                lineheights: () => makeLineHeightTokens_1.makeLineHeightTokens(frame, config.remSize, config.unitlessPrecision),
+-                mediaqueries: () => makeMediaQueryTokens_1.makeMediaQueryTokens(frame),
+-                opacities: () => {
++                lineheight: () => makeLineHeightTokens_1.makeLineHeightTokens(frame, config.remSize, config.unitlessPrecision),
++                breakpoint: () => makeMediaQueryTokens_1.makeMediaQueryTokens(frame),
++                opacity: () => {
+                     if (!config)
+                         throw new Error(errors_1.ErrorExtractTokensNoConfig);
+                     return makeOpacityTokens_1.makeOpacityTokens(frame, config.opacitiesUnit);
+                 },
+-                radii: () => makeRadiusTokens_1.makeRadiusTokens(frame, config.remSize),
+-                shadows: () => makeShadowTokens_1.makeShadowTokens(frame),
++                radius: () => makeRadiusTokens_1.makeRadiusTokens(frame, config.remSize),
++                shadow: () => makeShadowTokens_1.makeShadowTokens(frame),
+                 spacing: () => {
+                     if (!config)
+                         throw new Error(errors_1.ErrorExtractTokensNoConfig);
+                     return makeSpacingTokens_1.makeSpacingTokens(frame, config.spacingUnit, config.remSize);
+                 },
+-                spacings: () => {
+-                    if (!config)
+-                        throw new Error(errors_1.ErrorExtractTokensNoConfig);
+-                    return makeSpacingTokens_1.makeSpacingTokens(frame, config.spacingUnit, config.remSize);
+-                },
+-                zindices: () => makeZindexTokens_1.makeZindexTokens(frame)
++                zindex: () => makeZindexTokens_1.makeZindexTokens(frame)
+             };
+             if (tokenOperations.hasOwnProperty(name))
+                 return tokenOperations[name]();
+diff --git a/node_modules/figmagic/build/bin/entities/Token/index.js.map b/node_modules/figmagic/build/bin/entities/Token/index.js.map
+index 4068a28..4aa958d 100644
+--- a/node_modules/figmagic/build/bin/entities/Token/index.js.map
++++ b/node_modules/figmagic/build/bin/entities/Token/index.js.map
+@@ -1 +1 @@
+-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../bin/entities/Token/index.ts"],"names":[],"mappings":"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"}
+\ No newline at end of file
++{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../bin/entities/Token/index.ts"],"names":[],"mappings":"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"}
+\ No newline at end of file
+diff --git a/node_modules/figmagic/build/bin/frameworks/system/acceptedTokenTypes.js b/node_modules/figmagic/build/bin/frameworks/system/acceptedTokenTypes.js
+index f6d130a..94aa319 100644
+--- a/node_modules/figmagic/build/bin/frameworks/system/acceptedTokenTypes.js
++++ b/node_modules/figmagic/build/bin/frameworks/system/acceptedTokenTypes.js
+@@ -2,23 +2,21 @@
+ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.acceptedTokenTypes = void 0;
+ exports.acceptedTokenTypes = [
+-    'borderwidths',
++    'borderwidth',
+     'color',
+-    'colors',
+-    'delays',
+-    'durations',
+-    'easings',
+-    'fontfamilies',
+-    'fontsizes',
+-    'fontweights',
+-    'letterspacings',
+-    'lineheights',
+-    'mediaqueries',
+-    'opacities',
+-    'radii',
+-    'shadows',
++    'delay',
++    'duration',
++    'easing',
++    'fontfamily',
++    'fontsize',
++    'fontweight',
++    'letterspacing',
++    'lineheight',
++    'breakpoint',
++    'opacity',
++    'radius',
++    'shadow',
+     'spacing',
+-    'spacings',
+-    'zindices'
++    'zindex'
+ ];
+ //# sourceMappingURL=acceptedTokenTypes.js.map
+\ No newline at end of file
+diff --git a/node_modules/figmagic/build/bin/frameworks/system/acceptedTokenTypes.js.map b/node_modules/figmagic/build/bin/frameworks/system/acceptedTokenTypes.js.map
+index 8def3d3..cd783bc 100644
+--- a/node_modules/figmagic/build/bin/frameworks/system/acceptedTokenTypes.js.map
++++ b/node_modules/figmagic/build/bin/frameworks/system/acceptedTokenTypes.js.map
+@@ -1 +1 @@
+-{"version":3,"file":"acceptedTokenTypes.js","sourceRoot":"","sources":["../../../../bin/frameworks/system/acceptedTokenTypes.ts"],"names":[],"mappings":";;;AAAa,QAAA,kBAAkB,GAAa;IAC1C,cAAc;IACd,OAAO;IACP,QAAQ;IACR,QAAQ;IACR,WAAW;IACX,SAAS;IACT,cAAc;IACd,WAAW;IACX,aAAa;IACb,gBAAgB;IAChB,aAAa;IACb,cAAc;IACd,WAAW;IACX,OAAO;IACP,SAAS;IACT,SAAS;IACT,UAAU;IACV,UAAU;CACX,CAAC"}
+\ No newline at end of file
++{"version":3,"file":"acceptedTokenTypes.js","sourceRoot":"","sources":["../../../../bin/frameworks/system/acceptedTokenTypes.ts"],"names":[],"mappings":";;;AAAa,QAAA,kBAAkB,GAAa;IAC1C,aAAa;IACb,OAAO;IACP,OAAO;IACP,UAAU;IACV,QAAQ;IACR,YAAY;IACZ,UAAU;IACV,YAAY;IACZ,eAAe;IACf,YAAY;IACZ,YAAY;IACZ,SAAS;IACT,QAAQ;IACR,QAAQ;IACR,SAAS;IACT,QAAQ;CACT,CAAC"}
+\ No newline at end of file

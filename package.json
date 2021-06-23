@@ -9,9 +9,10 @@
     "deploy": "serverless",
     "format": "prettier --ignore-path .gitignore --write .",
     "lint": "eslint --ext .jsx --ext .js src/",
-    "fetch-figma": "npx figmagic",
-    "build-figma": "npx figmagic && node build-dictionary.js",
-    "build-dictionary": "node build-dictionary.js"
+    "fetch-figma": "figmagic",
+    "build-figma": "figmagic && node build-dictionary.js",
+    "build-dictionary": "node build-dictionary.js",
+    "postinstall": "npx patch-package"
   },
   "husky": {
     "hooks": {
@@ -26,7 +27,7 @@
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.12.0",
-    "figmagic": "^4.2.16",
+    "figmagic": "^4.2.19",
     "modern-reset": "^0.1.0",
     "mongodb-client-encryption": "^1.2.5",
     "mongoose": "^5.12.13",
