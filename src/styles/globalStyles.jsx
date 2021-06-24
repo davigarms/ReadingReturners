@@ -43,8 +43,15 @@ const GlobalStyle = createGlobalStyle`
     font-size: var(--font-size-paragraph);
   }
 
-  li {
-    border: var(--border-width-hairline) solid var(--color-blue1);
+  input {
+    color: var(--color-gray1);
+    font-size: var(--font-size-paragraph);
+    padding: var(--spacing-tiny) var(--spacing-small);
+    border: var(--border-width-hairline) solid var(--color-gray3);
+    border-radius: var(--radius-circle);
+    ::placeholder {
+      color: var(--color-gray2);
+    }
   }
 `
 
