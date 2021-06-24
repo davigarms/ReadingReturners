@@ -1,5 +1,5 @@
-import Stack from 'styles/utils/stack'
-import Container from 'styles/utils/container'
+import Stack from 'components/layout/stack'
+import Container from 'components/layout/container'
 import { SPACING_SMALL } from 'styles/dictionary'
 import SearchBar from 'components/search-bar'
 import books from 'google-books-search'
@@ -9,8 +9,6 @@ export default function Index() {
   const [hasSearched, setHasSearched] = useState(false)
   const [results, setResults] = useState([])
   const [searchText, setSearchText] = useState()
-
-  console.log(results.length)
 
   const doSearch = (searchText) => {
     books.search(searchText, function (error, results) {

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { BREAK_POINT_MOBILE_LG, SPACING_SMALL } from '../dictionary'
+import { BREAK_POINT_MOBILE_LG } from 'styles/dictionary'
 
 export default function Container({
   width = BREAK_POINT_MOBILE_LG,
