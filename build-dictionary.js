@@ -1,5 +1,5 @@
 const path = require('path')
-
+const fs = require('fs')
 const baseDir = 'figmagic'
 const tokenDir = 'dictionary'
 
@@ -10,37 +10,7 @@ const StyleDictionary = require('style-dictionary').extend({
       parse: ({ contents, filePath }) => {
         try {
           const object = JSON.parse(contents)
-          const tokenFile = path.basename(filePath).replace('.json', '')
-          const tokenTypes = [
-            { type: 'borderWidths', name: 'borderWidth' },
-            { type: 'colors', name: 'color' },
-            { type: 'delays', name: 'delay' },
-            { type: 'durations', name: 'duration' },
-            { type: 'easings', name: 'easing' },
-            { type: 'fontFamilies', name: 'fontFamily' },
-            { type: 'fontSizes', name: 'fontSize' },
-            { type: 'fontWeights', name: 'fontWeight' },
-            { type: 'letterSpacings', name: 'letterSpacing' },
-            { type: 'lineHeights', name: 'lineHeight' },
-            { type: 'mediaQueries', name: 'breakPoint' },
-            { type: 'opacities', name: 'opacity' },
-            { type: 'radii', name: 'radius' },
-            { type: 'shadows', name: 'shadow' },
-            { type: 'spacing', name: 'spacing' },
-            { type: 'zIndices', name: 'zIndex' },
-          ]
-          const output = {}
-
-          const tokenName = tokenTypes.find((i) => tokenFile === i.type).name
-
-          output[tokenName] = { ...object }
-
-          for (const key in output[tokenName]) {
-            output[tokenName][key] = {
-              value: output[tokenName][key],
-            }
-          }
-
+          const output = parseTokens(object, filePath)
           return output
         } catch (error) {
           return error
@@ -86,5 +56,43 @@ const StyleDictionary = require('style-dictionary').extend({
     },
   },
 })
+
+function loadConfig() {
+  const file = fs.existsSync('.sdconfigrc')
+    ? '.sdconfigrc'
+    : fs.existsSync('sdconfig.json')
+    ? 'sdconfig.json'
+    : false
+
+  if (file) {
+    try {
+      const rawdata = fs.readFileSync(file)
+      const configData = JSON.parse(rawdata)
+      return configData
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
+
+function parseTokens(object, filePath) {
+  const tokenFile = path.basename(filePath).replace('.json', '')
+  const configData = loadConfig() || {}
+  const tokenName =
+    Object.keys(configData).indexOf('tokenNames') > -1
+      ? configData.tokenNames.find((i) => tokenFile === i.input).output
+      : tokenFile
+
+  const output = {}
+
+  output[tokenName] = { ...object }
+
+  for (const key in output[tokenName]) {
+    output[tokenName][key] = {
+      value: output[tokenName][key],
+    }
+  }
+  return output
+}
 
 StyleDictionary.buildAllPlatforms()

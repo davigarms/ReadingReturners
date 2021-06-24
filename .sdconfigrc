@@ -1,0 +1,68 @@
+{
+  "tokenNames": [
+    {
+      "input": "borderWidths",
+      "output": "borderWidth"
+    },
+    {
+      "input": "colors",
+      "output": "color"
+    },
+    {
+      "input": "delays",
+      "output": "delay"
+    },
+    {
+      "input": "durations",
+      "output": "duration"
+    },
+    {
+      "input": "easings",
+      "output": "easing"
+    },
+    {
+      "input": "fontFamilies",
+      "output": "fontFamily"
+    },
+    {
+      "input": "fontSizes",
+      "output": "fontSize"
+    },
+    {
+      "input": "fontWeights",
+      "output": "fontWeight"
+    },
+    {
+      "input": "letterSpacings",
+      "output": "letterSpacing"
+    },
+    {
+      "input": "lineHeights",
+      "output": "lineHeight"
+    },
+    {
+      "input": "mediaQueries",
+      "output": "breakPoint"
+    },
+    {
+      "input": "opacities",
+      "output": "opacity"
+    },
+    {
+      "input": "radii",
+      "output": "radius"
+    },
+    {
+      "input": "shadows",
+      "output": "shadow"
+    },
+    {
+      "input": "spacing",
+      "output": "spacing"
+    },
+    {
+      "input": "zIndices",
+      "output": "zIndex"
+    }
+  ]
+}
