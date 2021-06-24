@@ -43,6 +43,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: var(--font-size-paragraph);
   }
 
+  li {
+    padding: 0 var(--spacing-small);
+  }
+
   input {
     color: var(--color-gray1);
     font-size: var(--font-size-paragraph);
@@ -51,6 +55,9 @@ const GlobalStyle = createGlobalStyle`
     border-radius: var(--radius-circle);
     ::placeholder {
       color: var(--color-gray2);
+    }
+    :focus {
+      outline: none;
     }
   }
 `
