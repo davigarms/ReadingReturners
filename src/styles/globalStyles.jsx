@@ -43,10 +43,6 @@ const GlobalStyle = createGlobalStyle`
     font-size: var(--font-size-paragraph);
   }
 
-  li {
-    padding: 0 var(--spacing-small);
-  }
-
   input {
     color: var(--color-gray1);
     font-size: var(--font-size-paragraph);

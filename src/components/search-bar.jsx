@@ -7,7 +7,11 @@ export default function SearchBar({
   onChange,
 }) {
   return (
-    <Wrapper style={{ '--width': fluid ? '100%' : 'initial' }}>
+    <Wrapper
+      style={{
+        '--width': fluid ? '100%' : 'initial',
+      }}
+    >
       <input
         type="text"
         placeholder={placeholder}

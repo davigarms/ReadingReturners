@@ -1,11 +1,16 @@
 import Stack from 'components/layout/stack'
-import Container from 'components/layout/container'
-import { SPACING_SMALL } from 'styles/dictionary'
+import Box from 'components/layout/box'
+import {
+  SPACING_SMALL,
+  BREAK_POINT_MOBILE_LG,
+} from 'styles/dictionary'
 import SearchBar from 'components/search-bar'
 import books from 'google-books-search'
 import { useState } from 'react'
+import BookItem from 'components/book-item'
 
 export default function Index() {
+  const [view, setView] = useState('list')
   const [hasSearched, setHasSearched] = useState(false)
   const [results, setResults] = useState([])
   const [searchText, setSearchText] = useState()
@@ -27,7 +32,7 @@ export default function Index() {
     if (e.key === 'Enter') doSearch(searchText)
   }
   return (
-    <Container fluid>
+    <Box width={BREAK_POINT_MOBILE_LG} fluid>
       <Stack spacing={SPACING_SMALL}>
         <SearchBar
           placeholder="Search for a book or an author..."
@@ -36,33 +41,36 @@ export default function Index() {
           fluid
         />
         <ul>
-          <Stack>
+          <Stack view={view}>
             {results.length > 0
               ? results.map((result) => {
                   return (
-                    <li key={result.id && result.id}>
-                      <h6>{result.title && result.title}</h6>
-                      <p>
-                        {result.authors &&
-                          result.authors.map((author, i, arr) =>
+                    <BookItem
+                      key={result.id}
+                      view={view}
+                      title={result.title}
+                      author={
+                        result.authors &&
+                        result.authors.map(
+                          (author, i, arr) =>
                             arr.length <= 1
                               ? author
                               : i < arr.length - 1
                               ? `${author}, `
                               : author
-                          )}
-                      </p>
-                    </li>
+                        )
+                      }
+                    />
                   )
                 })
               : hasSearched && (
-                  <li>
+                  <Box padding={`0 ${SPACING_SMALL}`}>
                     <h6>No books found</h6>
-                  </li>
+                  </Box>
                 )}
           </Stack>
         </ul>
       </Stack>
-    </Container>
+    </Box>
   )
 }
