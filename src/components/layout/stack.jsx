@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import { SPACING_TINY } from 'styles/dictionary'
+import { SPACING_XS } from 'styles/dictionary'
 
 export default function Stack({
-  spacing = SPACING_TINY,
+  spacing = SPACING_XS,
   view = 'list',
   height,
   cols = 1,

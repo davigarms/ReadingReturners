@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 23 Jun 2021 17:24:05 GMT
+ * Generated on Sat, 26 Jun 2021 01:03:51 GMT
  */
 
 :root {
@@ -25,29 +25,33 @@
   --color-gray1: rgb(79, 79, 79);
   --color-white: rgb(255, 255, 255);
   --color-black: rgb(51, 51, 51);
-  --delay-very-long: 1;
-  --delay-long: 0.6;
-  --delay-medium: 0.25;
-  --delay-short: 0.15;
-  --duration-very-long: 1;
-  --duration-long: 0.6;
-  --duration-medium: 0.25;
-  --duration-short: 0.15;
-  --easing-ease-in-out-sine: cubic-bezier(0.37, 0, 0.63, 1);
-  --easing-ease-out-sine: cubic-bezier(0.61, 1, 0.88, 1);
-  --easing-ease-in-sine: cubic-bezier(0.12, 0, 0.39, 0);
-  --font-family-bold: Helvetica Neue;
-  --font-family-medium: Helvetica Neue;
-  --font-family-regular: Helvetica Neue;
-  --font-family-light: Helvetica Neue;
-  --font-size-sub: 0.75rem;
-  --font-size-paragraph: 1rem;
-  --font-size-h6: 1.125rem;
-  --font-size-h5: 1.25rem;
-  --font-size-h4: 1.625rem;
+  --delay-slowest: 2;
+  --delay-slower: 1;
+  --delay-slow: 0.5;
+  --delay-fast: 0.25;
+  --delay-faster: 0.15;
+  --delay-fastest: 0.05;
+  --duration-slowest: 2;
+  --duration-slower: 1;
+  --duration-slow: 0.5;
+  --duration-fast: 0.25;
+  --duration-faster: 0.15;
+  --duration-fastest: 0.05;
+  --ease-in-out-sine: cubic-bezier(0.37, 0, 0.63, 1);
+  --ease-out-sine: cubic-bezier(0.61, 1, 0.88, 1);
+  --ease-in-sine: cubic-bezier(0.12, 0, 0.39, 0);
+  --font-size-xs: 0.625rem;
+  --font-size-s: 0.75rem;
+  --font-size-m: 0.875rem;
+  --font-size-l: 1rem;
+  --font-size-xl: 1.125rem;
+  --font-size-h6: 1rem;
+  --font-size-h5: 1.125rem;
+  --font-size-h4: 1.5rem;
   --font-size-h3: 2rem;
   --font-size-h2: 2.5rem;
   --font-size-h1: 3rem;
+  --font-size-paragraph: 0.875rem;
   --font-weight-bold: 700;
   --font-weight-medium: 500;
   --font-weight-regular: 400;
@@ -55,41 +59,42 @@
   --letter-spacing-tight: -0.045em;
   --letter-spacing-wide: 0.05em;
   --letter-spacing-regular: 0em;
-  --line-height-xs: 1;
-  --line-height-s: 1.35;
-  --line-height-m: 1.45;
-  --line-height-l: 1.65;
-  --break-point-mobile-sm: 320px;
-  --break-point-mobile-md: 480px;
-  --break-point-mobile-lg: 580px;
-  --break-point-mobile-max: 767px;
-  --break-point-tablet-min: 768px;
-  --break-point-tablet-max: 1024px;
-  --break-point-desktop-md: 1180px;
-  --break-point-desktop-lg: 1440px;
-  --break-point-wide: 1920px;
-  --opacity-opaque: 1;
-  --opacity-disabled: 0.65;
-  --opacity-semi-opaque: 0.5;
-  --opacity-transparent: 0;
+  --line-height-single: 1;
+  --line-height-header: 1.25;
+  --line-height-text: 1.5;
+  --line-height-double: 2;
+  --breakpoint-xs: 320px;
+  --breakpoint-s: 640px;
+  --breakpoint-m: 768px;
+  --breakpoint-l: 960px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-xxl: 1536px;
+  --opacity-5: 0.5;
+  --opacity-8: 0.8;
   --radius-circle: 100px;
   --radius-soft: 8px;
   --radius-rounded: 4px;
   --radius-hard: 0px;
-  --shadow-deep-multi: 0px 4px 20px rgba(0, 0, 0, 0.1),
+  --shadow-dropdown: 0px 4px 20px rgba(0, 0, 0, 0.1),
     0px 4px 4px rgba(0, 0, 0, 0.17);
-  --shadow-deep: 3px 3px 3px rgba(196, 196, 196, 0.75);
-  --shadow-medium: 0px 0px 5px rgba(0, 0, 0, 0.5);
-  --shadow-soft: 0px 0px 5px rgba(196, 196, 196, 1);
-  --spacing-huge: 6rem;
-  --spacing-large: 4rem;
-  --spacing-big: 3rem;
-  --spacing-medium: 2rem;
-  --spacing-small: 1rem;
-  --spacing-tiny: 0.5rem;
-  --z-index-top: 100;
-  --z-index-focus: 10;
-  --z-index-higher: 2;
-  --z-index-high: 1;
-  --z-index-regular: 0;
+  --shadow-header: 0px 2px 2px rgba(196, 196, 196, 0.75);
+  --shadow-active: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0px 2px 5px rgba(196, 196, 196, 1);
+  --spacing-xxs: 0.25rem;
+  --spacing-xs: 0.5rem;
+  --spacing-s: 0.875rem;
+  --spacing-m: 1.3125rem;
+  --spacing-l: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-xxl: 4rem;
+  --z-toast: 10000;
+  --z-sticked: 100;
+  --z-spinner: 9050;
+  --z-popup: 5000;
+  --z-overlay: 8000;
+  --z-modal: 9000;
+  --z-dropdown: 7000;
+  --z-dialog: 6000;
+  --z-default: 0;
+  --z-back: -99999;
 }

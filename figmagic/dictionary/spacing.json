@@ -1,8 +1,9 @@
 {
-  "huge": "6rem",
-  "large": "4rem",
-  "big": "3rem",
-  "medium": "2rem",
-  "small": "1rem",
-  "tiny": "0.5rem"
+  "xxs": "0.25rem",
+  "xs": "0.5rem",
+  "s": "0.875rem",
+  "m": "1.3125rem",
+  "l": "2rem",
+  "xl": "3rem",
+  "xxl": "4rem"
 }

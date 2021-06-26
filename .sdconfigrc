@@ -18,11 +18,11 @@
     },
     {
       "input": "easings",
-      "output": "easing"
+      "output": "ease"
     },
     {
       "input": "fontFamilies",
-      "output": "fontFamily"
+      "output": "font"
     },
     {
       "input": "fontSizes",
@@ -42,7 +42,7 @@
     },
     {
       "input": "mediaQueries",
-      "output": "breakPoint"
+      "output": "breakpoint"
     },
     {
       "input": "opacities",
@@ -62,7 +62,7 @@
     },
     {
       "input": "zIndices",
-      "output": "zIndex"
+      "output": "z"
     }
   ]
 }

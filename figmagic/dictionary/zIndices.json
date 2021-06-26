@@ -1,7 +1,12 @@
 {
-  "top": 100,
-  "focus": 10,
-  "higher": 2,
-  "high": 1,
-  "regular": 0
+  "toast": 10000,
+  "sticked": 100,
+  "spinner": 9050,
+  "popup": 5000,
+  "overlay": 8000,
+  "modal": 9000,
+  "dropdown": 7000,
+  "dialog": 6000,
+  "default": 0,
+  "back": -99999
 }

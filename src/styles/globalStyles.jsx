@@ -1,9 +1,13 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
+  :root {
+    --font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
+  }
+
   body {
-    font-family: var(--font-family-regular);
-    margin: var(--spacing-small);
+    font-family:  var(--font-family);
+    margin: var(--spacing-s);
   }
 
   h1,
@@ -46,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
   input {
     color: var(--color-gray1);
     font-size: var(--font-size-paragraph);
-    padding: var(--spacing-tiny) var(--spacing-small);
+    padding: var(--spacing-xs) var(--spacing-s);
     border: var(--border-width-hairline) solid var(--color-gray3);
     border-radius: var(--radius-circle);
     ::placeholder {

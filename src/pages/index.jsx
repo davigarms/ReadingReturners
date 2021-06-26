@@ -1,16 +1,13 @@
 import Stack from 'components/layout/stack'
 import Box from 'components/layout/box'
-import {
-  SPACING_SMALL,
-  BREAK_POINT_MOBILE_LG,
-} from 'styles/dictionary'
+import { SPACING_S, BREAKPOINT_S } from 'styles/dictionary'
 import SearchBar from 'components/search-bar'
 import books from 'google-books-search'
 import { useState } from 'react'
 import BookItem from 'components/book-item'
 
 export default function Index() {
-  const [view, setView] = useState('list')
+  const [view, setView] = useState('cover')
   const [hasSearched, setHasSearched] = useState(false)
   const [results, setResults] = useState([])
   const [searchText, setSearchText] = useState()
@@ -32,8 +29,8 @@ export default function Index() {
     if (e.key === 'Enter') doSearch(searchText)
   }
   return (
-    <Box width={BREAK_POINT_MOBILE_LG} fluid>
-      <Stack spacing={SPACING_SMALL}>
+    <Box width={BREAKPOINT_S} fluid>
+      <Stack spacing={SPACING_S}>
         <SearchBar
           placeholder="Search for a book or an author..."
           onKeyPress={handleKeyPress}
@@ -51,20 +48,19 @@ export default function Index() {
                       title={result.title}
                       author={
                         result.authors &&
-                        result.authors.map(
-                          (author, i, arr) =>
-                            arr.length <= 1
-                              ? author
-                              : i < arr.length - 1
-                              ? `${author}, `
-                              : author
+                        result.authors.map((author, i, arr) =>
+                          arr.length <= 1
+                            ? author
+                            : i < arr.length - 1
+                            ? `${author}, `
+                            : author
                         )
                       }
                     />
                   )
                 })
               : hasSearched && (
-                  <Box padding={`0 ${SPACING_SMALL}`}>
+                  <Box padding={`0 ${SPACING_S}`}>
                     <h6>No books found</h6>
                   </Box>
                 )}
