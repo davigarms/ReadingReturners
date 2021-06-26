@@ -1,14 +1,14 @@
 import Stack from 'components/layout/stack'
 import Box from 'components/layout/box'
 import Container from 'components/layout/container'
-import { SPACING_S, BREAKPOINT_S } from 'styles/dictionary'
+import { SPACING_S, BREAKPOINT_M } from 'styles/dictionary'
 import SearchBar from 'components/search-bar'
 import books from 'google-books-search'
 import { useState } from 'react'
 import BookItem from 'components/book-item'
 
 export default function Index() {
-  const [view, setView] = useState('cover')
+  const [view, setView] = useState('grid')
   const [hasSearched, setHasSearched] = useState(false)
   const [results, setResults] = useState([])
   const [searchText, setSearchText] = useState()
@@ -34,9 +34,8 @@ export default function Index() {
     if (e.key === 'Enter') doSearch(searchText)
   }
 
-  // console.log(results)
   return (
-    <Container width={BREAKPOINT_S} fluid>
+    <Container width={BREAKPOINT_M} fluid>
       <Stack spacing={SPACING_S}>
         <SearchBar
           placeholder="Search for a book or an author..."
@@ -45,7 +44,7 @@ export default function Index() {
           fluid
         />
         <ul>
-          <Stack view={view} cols="3">
+          <Stack view={view} cols={{ xxs: 2, xs: 3, s: 3, m: 4 }}>
             {results.length > 0
               ? results.map((result) => {
                   return (

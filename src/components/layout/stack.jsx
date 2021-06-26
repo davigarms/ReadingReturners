@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { SPACING_S } from 'styles/dictionary'
 import { remToInt } from 'utils/util'
+import { useWindowWidth } from 'utils/window'
 
 export default function Stack({
   spacing = SPACING_S,
@@ -9,32 +10,47 @@ export default function Stack({
   height,
   cols = 1,
   children,
+  gridRatio = 2 / 3,
 }) {
   const wrapperRef = useRef()
-  const [windowWidth, setWindowWidth] = useState()
   const [calculatedHeight, setCalculatedHeight] = useState()
+
+  const [breakPoint, windowWidth, getWindowWidth] = useWindowWidth()
+
+  const deviceCols =
+    cols[breakPoint] ||
+    cols.xxl ||
+    cols.xl ||
+    cols.l ||
+    cols.m ||
+    cols.s ||
+    cols.xs ||
+    cols.xxs ||
+    cols
+
+  cols =
+    view === 'list'
+      ? 1
+      : view === 'grid' && deviceCols < 2
+      ? 2
+      : deviceCols
+
+  useEffect(() => {
+    getWindowWidth()
+  }, [getWindowWidth])
 
   useEffect(() => {
     setCalculatedHeight(
-      view === 'cover'
+      view === 'grid'
         ? height ||
             `${
-              ((wrapperRef.current.offsetWidth / cols -
+              (wrapperRef.current.offsetWidth / cols -
                 remToInt(spacing)) /
-                2) *
-              3
+              gridRatio
             }px`
         : 'initial'
     )
-  }, [height, view, cols, spacing, windowWidth])
-
-  useEffect(() => {
-    window.addEventListener('resize', () => {
-      setWindowWidth(window.innerWidth)
-    })
-  })
-
-  cols = view === 'list' ? 1 : view === 'cover' && cols < 2 ? 2 : cols
+  }, [height, view, cols, spacing, gridRatio, windowWidth])
 
   return (
     <Wrapper
