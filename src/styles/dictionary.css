@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sat, 26 Jun 2021 01:03:51 GMT
+ * Generated on Sat, 26 Jun 2021 23:44:15 GMT
  */
 
 :root {
@@ -63,9 +63,10 @@
   --line-height-header: 1.25;
   --line-height-text: 1.5;
   --line-height-double: 2;
-  --breakpoint-xs: 320px;
-  --breakpoint-s: 640px;
-  --breakpoint-m: 768px;
+  --breakpoint-xxs: 1px;
+  --breakpoint-xs: 360px;
+  --breakpoint-s: 400px;
+  --breakpoint-m: 640px;
   --breakpoint-l: 960px;
   --breakpoint-xl: 1280px;
   --breakpoint-xxl: 1536px;

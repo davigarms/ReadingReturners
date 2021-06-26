@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sat, 26 Jun 2021 01:03:51 GMT
+ * Generated on Sat, 26 Jun 2021 23:44:15 GMT
  */
 
 export const BORDER_WIDTH_CHUNKY = '8px'
@@ -62,9 +62,10 @@ export const LINE_HEIGHT_SINGLE = '1.00'
 export const LINE_HEIGHT_HEADER = '1.25'
 export const LINE_HEIGHT_TEXT = '1.50'
 export const LINE_HEIGHT_DOUBLE = '2.00'
-export const BREAKPOINT_XS = '320px'
-export const BREAKPOINT_S = '640px'
-export const BREAKPOINT_M = '768px'
+export const BREAKPOINT_XXS = '1px'
+export const BREAKPOINT_XS = '360px'
+export const BREAKPOINT_S = '400px'
+export const BREAKPOINT_M = '640px'
 export const BREAKPOINT_L = '960px'
 export const BREAKPOINT_XL = '1280px'
 export const BREAKPOINT_XXL = '1536px'
