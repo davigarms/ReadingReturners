@@ -11,6 +11,7 @@ export default function Stack({
   children,
 }) {
   const wrapperRef = useRef()
+  const [windowWidth, setWindowWidth] = useState()
   const [calculatedHeight, setCalculatedHeight] = useState()
 
   useEffect(() => {
@@ -25,7 +26,13 @@ export default function Stack({
             }px`
         : 'initial'
     )
-  }, [height, view, cols, spacing])
+  }, [height, view, cols, spacing, windowWidth])
+
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setWindowWidth(window.innerWidth)
+    })
+  })
 
   cols = view === 'list' ? 1 : view === 'cover' && cols < 2 ? 2 : cols
 
