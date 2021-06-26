@@ -1,23 +1,33 @@
+import { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { SPACING_TINY } from 'styles/dictionary'
 
 export default function Stack({
   spacing = SPACING_TINY,
   view = 'list',
+  height,
   cols = 1,
   children,
 }) {
-  cols =
-    view === 'list'
-      ? 1
-      : view === 'cover' && cols < 2
-      ? 2
-      : cols
+  const wrapperRef = useRef()
+  const [calculatedHeight, setCalculatedHeight] = useState()
+
+  useEffect(() => {
+    setCalculatedHeight(
+      view === 'cover'
+        ? height ||
+            `${(wrapperRef.current.offsetWidth / cols / 2) * 2.5}px`
+        : 'initial'
+    )
+  }, [height, view, cols])
+
+  cols = view === 'list' ? 1 : view === 'cover' && cols < 2 ? 2 : cols
 
   return (
     <Wrapper
+      ref={wrapperRef}
       style={{
-        '--height': view === 'cover' ? '11rem' : 'unset',
+        '--height': calculatedHeight,
         '--width': `${100 / cols}%`,
         '--spacing': spacing,
         '--column-spacing': view === 'cover' && 0,
@@ -36,6 +46,8 @@ const Wrapper = styled.div`
   > * {
     flex: 1 1 var(--width);
     height: var(--height);
+    max-height: var(--height);
+    overflow: hidden;
   }
 
   > * + * {
