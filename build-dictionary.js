@@ -44,7 +44,7 @@ const StyleDictionary = require('style-dictionary').extend({
         'time/seconds',
         'content/icon',
         'color/rgb',
-        'size/rem',
+        'size/px',
       ],
       buildPath: './src/styles/',
       files: [
@@ -58,15 +58,12 @@ const StyleDictionary = require('style-dictionary').extend({
 })
 
 function loadConfig() {
-  const file = fs.existsSync('.sdconfigrc')
-    ? '.sdconfigrc'
-    : fs.existsSync('sdconfig.json')
-    ? 'sdconfig.json'
-    : false
+  const files = ['.sdconfigrc', 'sdconfig.json']
+  const validFiles = files.filter((file) => fs.existsSync(file))
 
-  if (file) {
+  if (validFiles.length > 0) {
     try {
-      const rawdata = fs.readFileSync(file)
+      const rawdata = fs.readFileSync(validFiles[0])
       const configData = JSON.parse(rawdata)
       return configData
     } catch (error) {
@@ -78,9 +75,13 @@ function loadConfig() {
 function parseTokens(object, filePath) {
   const tokenFile = path.basename(filePath).replace('.json', '')
   const configData = loadConfig() || {}
+  const token = (token) => token.input === tokenFile
+
   const tokenName =
     Object.keys(configData).indexOf('tokenNames') > -1
-      ? configData.tokenNames.find((i) => tokenFile === i.input).output
+      ? configData.tokenNames.find(token)
+        ? configData.tokenNames.find(token).output || tokenFile
+        : tokenFile
       : tokenFile
 
   const output = {}
