@@ -35,6 +35,7 @@
   "env": {
     "node": true,
     "commonjs": true,
+    "browser": true,
     "jest": true
   },
   "globals": { "fetch": false, "React": "writable" }
