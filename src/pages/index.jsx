@@ -14,12 +14,16 @@ export default function Index() {
   const [searchText, setSearchText] = useState()
 
   const doSearch = (searchText) => {
-    books.search(searchText, function (error, results) {
-      if (!error) {
-        setResults(results)
+    books.search(
+      searchText,
+      { limit: 12 },
+      function (error, results) {
+        if (!error) {
+          setResults(results)
+        }
+        setHasSearched(true)
       }
-      setHasSearched(true)
-    })
+    )
   }
 
   const handleChange = (e) => {

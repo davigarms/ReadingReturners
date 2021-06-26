@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import { BORDER_WIDTH_HAIRLINE } from 'styles/dictionary'
+import { COLOR_GRAY2 } from 'styles/dictionary'
 
 export default function Box({
   children,
@@ -9,6 +11,10 @@ export default function Box({
   fluid,
   padding,
   width,
+  border,
+  borderColor = COLOR_GRAY2,
+  borderWidth = BORDER_WIDTH_HAIRLINE,
+  borderStyle = 'solid',
 }) {
   const maxWidth = fluid ? width : 'initial'
   width = fluid ? '100%' : width
@@ -23,6 +29,9 @@ export default function Box({
         '--max-width': maxWidth,
         '--padding': padding,
         '--width': width,
+        '--border-color': border && borderColor,
+        '--border-width': border && borderWidth,
+        '--border-style': border && borderStyle,
       }}
     >
       {children}
@@ -39,4 +48,5 @@ const Wrapper = styled.div`
   max-width: var(--max-width);
   padding: var(--padding);
   width: var(--width);
+  border: var(--border-color) var(--border-width) var(--border-style);
 `

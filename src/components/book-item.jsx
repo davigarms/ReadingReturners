@@ -1,4 +1,5 @@
 import Box from 'components/layout/box'
+import styled from 'styled-components'
 
 export default function BookItem({
   view,
@@ -8,11 +9,24 @@ export default function BookItem({
   padding,
 }) {
   return (
-    <Box padding={padding} backgroundImage={thumbnail} view={view}>
-      <li>
+    <Box
+      padding={padding}
+      backgroundImage={thumbnail}
+      view={view}
+      border
+    >
+      <Wrapper
+        style={{ '--display': view === 'list' ? 'block' : 'none' }}
+      >
         <h6>{title}</h6>
         <p>{author}</p>
-      </li>
+      </Wrapper>
     </Box>
   )
 }
+
+const Wrapper = styled.li`
+  > * {
+    display: var(--display);
+  }
+`
