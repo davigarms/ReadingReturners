@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import { SPACING_XS } from 'styles/dictionary'
+import { SPACING_S } from 'styles/dictionary'
+import { remToInt } from 'utils/util'
 
 export default function Stack({
-  spacing = SPACING_XS,
+  spacing = SPACING_S,
   view = 'list',
   height,
   cols = 1,
@@ -16,10 +17,15 @@ export default function Stack({
     setCalculatedHeight(
       view === 'cover'
         ? height ||
-            `${(wrapperRef.current.offsetWidth / cols / 2) * 2.5}px`
+            `${
+              ((wrapperRef.current.offsetWidth / cols -
+                remToInt(spacing)) /
+                2) *
+              3
+            }px`
         : 'initial'
     )
-  }, [height, view, cols])
+  }, [height, view, cols, spacing])
 
   cols = view === 'list' ? 1 : view === 'cover' && cols < 2 ? 2 : cols
 
@@ -30,7 +36,6 @@ export default function Stack({
         '--height': calculatedHeight,
         '--width': `${100 / cols}%`,
         '--spacing': spacing,
-        '--column-spacing': view === 'cover' && 0,
       }}
       cols={cols}
     >
@@ -40,21 +45,16 @@ export default function Stack({
 }
 
 const Wrapper = styled.div`
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
+  margin: calc(-1 * var(--spacing)) 0 0 calc(-1 * var(--spacing));
+  width: calc(100% + var(--spacing));
 
   > * {
-    flex: 1 1 var(--width);
+    flex: 0 0 calc(var(--width) - var(--spacing));
+    margin: var(--spacing) 0 0 var(--spacing);
     height: var(--height);
     max-height: var(--height);
     overflow: hidden;
-  }
-
-  > * + * {
-    margin-top: var(--spacing);
-  }
-
-  > :nth-child(-n + ${(props) => props.cols}) {
-    margin-top: var(--column-spacing);
   }
 `

@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
 export default function Box({
-  width,
-  fluid,
-  flex,
-  display = 'block',
-  padding,
-  backgroundColor,
-  color,
   children,
+  view = 'list',
+  color,
+  backgroundColor,
+  backgroundImage,
+  fluid,
+  padding,
+  width,
 }) {
   const maxWidth = fluid ? width : 'initial'
   width = fluid ? '100%' : width
@@ -16,12 +16,13 @@ export default function Box({
   return (
     <Wrapper
       style={{
-        '--max-width': maxWidth,
-        '--width': width,
-        '--display': flex ? 'flex' : display,
-        '--padding': padding,
-        '--background-color': backgroundColor,
         '--color': color,
+        '--background-image':
+          view === 'cover' ? `url(${backgroundImage})` : '',
+        '--background-color': backgroundColor,
+        '--max-width': maxWidth,
+        '--padding': padding,
+        '--width': width,
       }}
     >
       {children}
@@ -30,11 +31,11 @@ export default function Box({
 }
 
 const Wrapper = styled.div`
-  margin-left: auto;
-  margin-right: auto;
   background-color: var(--background-color);
+  background-image: var(--background-image);
+  background-repeat: no-repeat;
+  background-size: cover;
   color: var(--color);
-  display: var(--display);
   max-width: var(--max-width);
   padding: var(--padding);
   width: var(--width);

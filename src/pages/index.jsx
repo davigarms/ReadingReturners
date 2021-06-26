@@ -1,5 +1,6 @@
 import Stack from 'components/layout/stack'
 import Box from 'components/layout/box'
+import Container from 'components/layout/container'
 import { SPACING_S, BREAKPOINT_S } from 'styles/dictionary'
 import SearchBar from 'components/search-bar'
 import books from 'google-books-search'
@@ -28,8 +29,10 @@ export default function Index() {
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') doSearch(searchText)
   }
+
+  // console.log(results)
   return (
-    <Box width={BREAKPOINT_S} fluid>
+    <Container width={BREAKPOINT_S} fluid>
       <Stack spacing={SPACING_S}>
         <SearchBar
           placeholder="Search for a book or an author..."
@@ -38,7 +41,7 @@ export default function Index() {
           fluid
         />
         <ul>
-          <Stack view={view}>
+          <Stack view={view} cols="3">
             {results.length > 0
               ? results.map((result) => {
                   return (
@@ -46,6 +49,8 @@ export default function Index() {
                       key={result.id}
                       view={view}
                       title={result.title}
+                      thumbnail={result.thumbnail}
+                      padding={`0 ${SPACING_S}`}
                       author={
                         result.authors &&
                         result.authors.map((author, i, arr) =>
@@ -67,6 +72,6 @@ export default function Index() {
           </Stack>
         </ul>
       </Stack>
-    </Box>
+    </Container>
   )
 }

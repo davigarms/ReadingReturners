@@ -1,9 +1,14 @@
 import Box from 'components/layout/box'
-import { SPACING_S } from 'styles/dictionary'
 
-export default function BookItem({ view, title, author }) {
+export default function BookItem({
+  view,
+  title,
+  author,
+  thumbnail,
+  padding,
+}) {
   return (
-    <Box padding={`0 ${SPACING_S}`}>
+    <Box padding={padding} backgroundImage={thumbnail} view={view}>
       <li>
         <h6>{title}</h6>
         <p>{author}</p>
