@@ -11,9 +11,8 @@ export default function BookItem({
   return (
     <Box
       padding={padding}
-      backgroundImage={thumbnail}
-      view={view}
-      border
+      backgroundImage={view === 'grid' && thumbnail}
+      border={view === 'grid'}
     >
       <Wrapper
         style={{ '--display': view === 'list' ? 'block' : 'none' }}

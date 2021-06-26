@@ -4,7 +4,6 @@ import { COLOR_GRAY2 } from 'styles/dictionary'
 
 export default function Box({
   children,
-  view = 'list',
   color,
   backgroundColor,
   backgroundImage,
@@ -23,8 +22,7 @@ export default function Box({
     <Wrapper
       style={{
         '--color': color,
-        '--background-image':
-          view === 'cover' ? `url(${backgroundImage})` : '',
+        '--background-image': `url(${backgroundImage})`,
         '--background-color': backgroundColor,
         '--max-width': maxWidth,
         '--padding': padding,
