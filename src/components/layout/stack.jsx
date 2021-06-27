@@ -27,12 +27,7 @@ export default function Stack({
     cols.xxs ||
     cols
 
-  cols =
-    view === 'list'
-      ? 1
-      : view === 'grid' && deviceCols < 2
-      ? 2
-      : deviceCols
+  cols = view === 'grid' ? deviceCols : 1
 
   useEffect(() => {
     setBreakPoint()
