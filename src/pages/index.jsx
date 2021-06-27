@@ -16,7 +16,7 @@ export default function Index() {
   const doSearch = (searchText) => {
     books.search(
       searchText,
-      { limit: 12 },
+      { limit: 15 },
       function (error, results) {
         if (!error) {
           setResults(results)
@@ -44,7 +44,10 @@ export default function Index() {
           fluid
         />
         <ul>
-          <Stack view={view} cols={{ xxs: 2, xs: 3, s: 3, m: 4 }}>
+          <Stack
+            view={view}
+            cols={{ xxs: 1, xs: 2, s: 5, m: 4, l: 5 }}
+          >
             {results.length > 0
               ? results.map((result) => {
                   return (

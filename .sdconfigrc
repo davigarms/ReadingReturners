@@ -42,7 +42,7 @@
     },
     {
       "input": "mediaQueries",
-      "output": "breakpoint"
+      "output": "$"
     },
     {
       "input": "opacities",

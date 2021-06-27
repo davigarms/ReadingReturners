@@ -44,7 +44,7 @@ const StyleDictionary = require('style-dictionary').extend({
         'time/seconds',
         'content/icon',
         'color/rgb',
-        'size/px',
+        'size/rem',
       ],
       buildPath: './src/styles/',
       files: [

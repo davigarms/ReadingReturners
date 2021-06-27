@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sat, 26 Jun 2021 23:44:15 GMT
+ * Generated on Sun, 27 Jun 2021 12:05:14 GMT
  */
 
 export const BORDER_WIDTH_CHUNKY = '8px'
@@ -63,12 +63,24 @@ export const LINE_HEIGHT_HEADER = '1.25'
 export const LINE_HEIGHT_TEXT = '1.50'
 export const LINE_HEIGHT_DOUBLE = '2.00'
 export const BREAKPOINT_XXS = '1px'
-export const BREAKPOINT_XS = '360px'
-export const BREAKPOINT_S = '400px'
-export const BREAKPOINT_M = '640px'
+export const BREAKPOINT_XS = '320px'
+export const BREAKPOINT_S = '480px'
+export const BREAKPOINT_M = '768px'
 export const BREAKPOINT_L = '960px'
 export const BREAKPOINT_XL = '1280px'
 export const BREAKPOINT_XXL = '1536px'
+export const SIZE_ICON_XS = '12px'
+export const SIZE_ICON_S = '16px'
+export const SIZE_ICON_M = '24px'
+export const SIZE_ICON_L = '32px'
+export const SIZE_ICON_XL = '48px'
+export const SIZE_BLOCK_XXS = '96px'
+export const SIZE_BLOCK_XS = '192px'
+export const SIZE_BLOCK_S = '240px'
+export const SIZE_BLOCK_M = '320px'
+export const SIZE_BLOCK_L = '400px'
+export const SIZE_BLOCK_XL = '640px'
+export const SIZE_BLOCK_XXL = '960px'
 export const OPACITY_5 = 0.5
 export const OPACITY_8 = 0.8
 export const RADIUS_CIRCLE = '100px'

@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sat, 26 Jun 2021 23:44:15 GMT
+ * Generated on Sun, 27 Jun 2021 12:05:14 GMT
  */
 
 :root {
@@ -64,12 +64,24 @@
   --line-height-text: 1.5;
   --line-height-double: 2;
   --breakpoint-xxs: 1px;
-  --breakpoint-xs: 360px;
-  --breakpoint-s: 400px;
-  --breakpoint-m: 640px;
+  --breakpoint-xs: 320px;
+  --breakpoint-s: 480px;
+  --breakpoint-m: 768px;
   --breakpoint-l: 960px;
   --breakpoint-xl: 1280px;
   --breakpoint-xxl: 1536px;
+  --size-icon-xs: 12px;
+  --size-icon-s: 16px;
+  --size-icon-m: 24px;
+  --size-icon-l: 32px;
+  --size-icon-xl: 48px;
+  --size-block-xxs: 96px;
+  --size-block-xs: 192px;
+  --size-block-s: 240px;
+  --size-block-m: 320px;
+  --size-block-l: 400px;
+  --size-block-xl: 640px;
+  --size-block-xxl: 960px;
   --opacity-5: 0.5;
   --opacity-8: 0.8;
   --radius-circle: 100px;

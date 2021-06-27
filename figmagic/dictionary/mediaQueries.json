@@ -1,9 +1,21 @@
 {
-  "xxs": "1px",
-  "xs": "360px",
-  "s": "400px",
-  "m": "640px",
-  "l": "960px",
-  "xl": "1280px",
-  "xxl": "1536px"
+  "breakpointXxs": "1px",
+  "breakpointXs": "320px",
+  "breakpointS": "480px",
+  "breakpointM": "768px",
+  "breakpointL": "960px",
+  "breakpointXl": "1280px",
+  "breakpointXxl": "1536px",
+  "sizeIconXs": "12px",
+  "sizeIconS": "16px",
+  "sizeIconM": "24px",
+  "sizeIconL": "32px",
+  "sizeIconXl": "48px",
+  "sizeBlockXxs": "96px",
+  "sizeBlockXs": "192px",
+  "sizeBlockS": "240px",
+  "sizeBlockM": "320px",
+  "sizeBlockL": "400px",
+  "sizeBlockXl": "640px",
+  "sizeBlockXxl": "960px"
 }
