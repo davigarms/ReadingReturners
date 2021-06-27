@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { SPACING_S } from 'styles/dictionary'
 import { remToInt } from 'utils/util'
-import { useWindowWidth } from 'utils/window'
+import { useBreakPoints } from 'lib/break-point'
 
 export default function Stack({
   spacing = SPACING_S,
@@ -14,8 +14,7 @@ export default function Stack({
 }) {
   const wrapperRef = useRef()
   const [calculatedHeight, setCalculatedHeight] = useState()
-
-  const [breakPoint, windowWidth, getWindowWidth] = useWindowWidth()
+  const [breakPoint, setBreakPoint] = useBreakPoints()
 
   const deviceCols =
     cols[breakPoint] ||
@@ -36,8 +35,8 @@ export default function Stack({
       : deviceCols
 
   useEffect(() => {
-    getWindowWidth()
-  }, [getWindowWidth])
+    setBreakPoint()
+  }, [setBreakPoint])
 
   useEffect(() => {
     setCalculatedHeight(
@@ -50,7 +49,7 @@ export default function Stack({
             }px`
         : 'initial'
     )
-  }, [height, view, cols, spacing, gridRatio, windowWidth])
+  }, [height, view, cols, spacing, gridRatio, breakPoint])
 
   return (
     <Wrapper
