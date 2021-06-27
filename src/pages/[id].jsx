@@ -1,13 +1,12 @@
 import { useFetchAPI } from 'lib/api'
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 export default function Index() {
   const router = useRouter()
   const { id } = router.query
-  const [book, setBook] = useState()
 
-  const fetchData = useFetchAPI('/book', id, setBook)
+  const [book, fetchData] = useFetchAPI('/book', id)
 
   useEffect(() => {
     id && fetchData()
