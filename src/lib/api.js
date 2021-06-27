@@ -6,20 +6,20 @@ export function getURL(path = '') {
   }/api${path}`
 }
 
-export function useFetchAPI(path, id) {
+export function useGetData(path, id) {
   const [data, setData] = useState()
 
-  const fetchData = useCallback(async () => {
-    const loadedData = (await fetchAPI(`${path}/${id}`)) || {}
+  const getData = useCallback(async () => {
+    const loadedData = (await fetchData(`${path}/${id}`)) || {}
     loadedData && loadedData.length === 0
       ? setData(loadedData)
       : setData(loadedData[0])
   }, [path, id])
 
-  return [data, fetchData]
+  return [data, getData]
 }
 
-export async function fetchAPI(path) {
+export async function fetchData(path) {
   const requestUrl = getURL(path)
   try {
     const response = await fetch(requestUrl)
