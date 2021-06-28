@@ -17,7 +17,7 @@ An app to allow a person to search for books and build their own personal readin
 
 **Other URLs so far:**
 
-To access a book directly, add an id as a parameter, as follows:
+To access a saved book directly, add a valid id as a parameter, as follows:
 
 - https://d1grde2885ktde.cloudfront.net/[id]
 
@@ -68,13 +68,11 @@ MongoDB and Mongoose are used to store and model application data. A MongoDB URI
 
 Figmagic fetches a document with predefined tokens directly from Figma and generates JSON files from their data, while Styles Dictionary exports their values in CSS and JS formats, to be applied consistently across the project.
 
-You can find a document template at:
+A Figmagic Figma template can be found at:
 
 https://www.figma.com/community/file/821094451476848226/Figmagic-%E2%80%94-Design-System-for-Tokens.
 
-You will also need a `Figma API key` and the `URL id` of that document. More information can be found in the [Figmagic documentation](https://github.com/mikaelvesavuori/figmagic 'Figmagic documentation').
-
-The JSON files are located in `figmagic/dictionary` folder.
+You will also need a `Figma API key` and the `URL id` of that document. More information can be accessed in the [Figmagic documentation](https://github.com/mikaelvesavuori/figmagic 'Figmagic documentation').
 
 **To fetch Figma tokens and update the JSON files, run:**
 
@@ -84,7 +82,7 @@ npm run fetch-figma
 yarn fetch-figma
 ```
 
-Tokens can also be generated directly from the JSON files using Styles Dictionary. You can edit them manually without the use of Figma API.
+Tokens can also be generated directly from the JSON files using Styles Dictionary. They are stored in `figmagic/dictionary` folder, and can be edited manually without the Figma API.
 
 **To generate the JS module from the JSON files, run:**
 
