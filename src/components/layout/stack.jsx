@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
+import { useEffect, useRef, useState } from 'react'
 import { SPACING_S } from 'styles/dictionary'
-import { remToInt } from 'utils/util'
-import { useBreakPoints } from 'lib/break-point'
+import { remToInt } from 'utils/transform'
+import { useBreakPoints } from 'utils/mediaquery'
 
 export default function Stack({
   spacing = SPACING_S,
