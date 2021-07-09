@@ -7,7 +7,6 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family:  var(--font-family);
-    margin: var(--spacing-s);
   }
 
   h1,

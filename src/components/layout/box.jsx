@@ -8,8 +8,9 @@ export default function Box({
   backgroundColor,
   backgroundImage,
   fluid,
-  padding,
+  padding = 0,
   width,
+  height,
   border,
   borderColor = COLOR_GRAY2,
   borderWidth = BORDER_WIDTH_HAIRLINE,
@@ -27,6 +28,7 @@ export default function Box({
         '--max-width': maxWidth,
         '--padding': padding,
         '--width': width,
+        '--height': height,
         '--border-color': border && borderColor,
         '--border-width': border && borderWidth,
         '--border-style': border && borderStyle,
@@ -46,5 +48,6 @@ const Wrapper = styled.div`
   max-width: var(--max-width);
   padding: var(--padding);
   width: var(--width);
+  height: var(--height);
   border: var(--border-color) var(--border-width) var(--border-style);
 `
