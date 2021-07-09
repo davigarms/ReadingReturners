@@ -9,23 +9,25 @@ export default function BookItem({
   padding,
 }) {
   return (
-    <Box
-      padding={padding}
-      backgroundImage={view === 'grid' && thumbnail}
-      border={view === 'grid'}
+    <Wrapper
+      style={{ '--display': view === 'list' ? 'block' : 'none' }}
     >
-      <Wrapper
-        style={{ '--display': view === 'list' ? 'block' : 'none' }}
+      <Box
+        padding={padding}
+        backgroundImage={view === 'grid' && thumbnail}
+        border={view === 'grid'}
+        fluid
       >
         <h6>{title}</h6>
         <p>{author}</p>
-      </Wrapper>
-    </Box>
+      </Box>
+    </Wrapper>
   )
 }
 
 const Wrapper = styled.li`
-  > * {
+  h6,
+  p {
     display: var(--display);
   }
 `
