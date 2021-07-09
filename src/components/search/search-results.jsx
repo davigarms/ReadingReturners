@@ -1,8 +1,8 @@
 import { SPACING_S } from 'styles/dictionary'
-import BookItem from './book-item'
-import Box from './layout/box'
-import Container from './layout/container'
-import Grid from './layout/grid'
+import BookItem from 'components/book/book-item'
+import Box from 'components/layout/box'
+import Container from 'components/layout/container'
+import Grid from 'components/layout/grid'
 
 export default function SearchResults({
   view,

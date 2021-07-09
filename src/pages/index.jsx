@@ -1,11 +1,11 @@
+import { useState } from 'react'
+import { SPACING_S, SPACING_M, BREAKPOINT_M } from 'styles/dictionary'
 import Stack from 'components/layout/stack'
 import Box from 'components/layout/box'
-import { SPACING_S, SPACING_M, BREAKPOINT_M } from 'styles/dictionary'
-import SearchBar from 'components/search-bar'
-import books from 'google-books-search'
-import { useState } from 'react'
 import Container from 'components/layout/container'
-import SearchResults from 'components/search-results'
+import SearchBar from 'components/search/search-bar'
+import SearchResults from 'components/search/search-results'
+import books from 'google-books-search'
 
 export default function Index() {
   const [view, setView] = useState('grid')
