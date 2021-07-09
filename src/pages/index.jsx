@@ -14,33 +14,21 @@ export default function Index() {
   const [searchText, setSearchText] = useState()
 
   const doSearch = (searchText) => {
-    books.search(
-      searchText,
-      { limit: 15 },
-      function (error, results) {
-        if (!error) {
-          setResults(results)
-        }
-        setHasSearched(true)
+    books.search(searchText, { limit: 15 }, function (error, results) {
+      if (!error) {
+        setResults(results)
       }
-    )
+      setHasSearched(true)
+    })
   }
 
-  const handleChange = (e) => {
-    setSearchText(e.target.value)
-  }
+  const handleChange = (e) => setSearchText(e.target.value)
 
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter') doSearch(searchText)
-  }
+  const handleKeyPress = (e) => e.key === 'Enter' && doSearch(searchText)
 
   return (
     <Container width={BREAKPOINT_M} fluid>
-      <Box
-        height={`calc(100vh - ${SPACING_S})`}
-        padding={SPACING_S}
-        fluid
-      >
+      <Box height={`calc(100vh - ${SPACING_S})`} padding={SPACING_S} fluid>
         <Stack spacing={SPACING_S}>
           <SearchBar
             placeholder="Search for a book or an author..."
