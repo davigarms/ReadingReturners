@@ -16,14 +16,14 @@ export default function Box({
   borderWidth = BORDER_WIDTH_HAIRLINE,
   borderStyle = 'solid',
 }) {
-  const maxWidth = fluid ? width : 'initial'
+  const maxWidth = fluid && width
   width = fluid ? '100%' : width
 
   return (
     <Wrapper
       style={{
         '--color': color,
-        '--background-image': `url(${backgroundImage})`,
+        '--background-image': backgroundImage && `url(${backgroundImage})`,
         '--background-color': backgroundColor,
         '--max-width': maxWidth,
         '--padding': padding,

@@ -1,16 +1,11 @@
 import styled from 'styled-components'
 import { SPACING_S } from 'styles/dictionary'
 
-export default function Stack({
-  spacing = SPACING_S,
-  height,
-  children,
-}) {
+export default function Stack({ spacing = SPACING_S, children }) {
   return (
     <Wrapper
       style={{
         '--spacing': spacing,
-        '--height': height,
       }}
     >
       {children}

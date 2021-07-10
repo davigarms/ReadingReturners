@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export default function Container({ children, fluid, width }) {
-  const maxWidth = fluid ? width : 'initial'
+  const maxWidth = fluid && width
   width = fluid ? '100%' : width
 
   return (
