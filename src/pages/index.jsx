@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { SPACING_S, SPACING_M, BREAKPOINT_M } from 'styles/dictionary'
+import { SPACING_S, BREAKPOINT_M } from 'styles/dictionary'
 import Stack from 'components/layout/stack'
 import Box from 'components/layout/box'
 import Container from 'components/layout/container'
@@ -28,7 +28,7 @@ export default function Index() {
 
   return (
     <Container width={BREAKPOINT_M} fluid>
-      <Box height={`calc(100vh - ${SPACING_S})`} padding={SPACING_S} fluid>
+      <Box height={`calc(100vh - ${SPACING_S})`} padding={SPACING_S}>
         <Stack spacing={SPACING_S}>
           <SearchBar
             placeholder="Search for a book or an author..."
@@ -41,7 +41,6 @@ export default function Index() {
             results={results}
             hasSearched={hasSearched}
           />
-          <Box height={SPACING_M}></Box>
         </Stack>
       </Box>
     </Container>

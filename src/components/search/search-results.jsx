@@ -1,20 +1,14 @@
-import { SPACING_S } from 'styles/dictionary'
+import { SPACING_M, SPACING_S } from 'styles/dictionary'
 import BookItem from 'components/book/book-item'
 import Box from 'components/layout/box'
 import Container from 'components/layout/container'
 import Grid from 'components/layout/grid'
 
-export default function SearchResults({
-  view,
-  results,
-  hasSearched,
-}) {
+export default function SearchResults({ view, results, hasSearched }) {
   return (
     <Container>
       <Grid
-        cols={
-          view === 'grid' ? { xxs: 1, xs: 2, s: 5, m: 4, l: 5 } : 1
-        }
+        cols={view === 'grid' ? { xxs: 1, xs: 2, s: 5, m: 4, l: 5 } : 1}
         gridRatio={view === 'grid' && 2 / 3}
       >
         {results.length > 0
@@ -45,6 +39,7 @@ export default function SearchResults({
               </Box>
             )}
       </Grid>
+      <Box height={SPACING_M} />
     </Container>
   )
 }
