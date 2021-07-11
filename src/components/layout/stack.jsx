@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { SPACING_S } from 'styles/dictionary'
 
-export default function Stack({ spacing = SPACING_S, children }) {
+export default function Stack({ children, spacing = SPACING_S }) {
   return (
     <Wrapper
       style={{
@@ -18,6 +18,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   height: inherit;
+  position: relative;
 
   > * + * {
     margin-top: var(--spacing);

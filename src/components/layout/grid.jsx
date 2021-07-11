@@ -5,10 +5,10 @@ import { remToInt } from 'utils/transform'
 import { useBreakPoints } from 'utils/mediaquery'
 
 export default function Grid({
-  spacing = SPACING_S,
-  height,
-  cols,
   children,
+  spacing = SPACING_S,
+  cols = 1,
+  height,
   gridRatio,
 }) {
   const wrapperRef = useRef()
@@ -33,11 +33,10 @@ export default function Grid({
   useEffect(() => {
     setCalculatedHeight(
       height
-        ? `${height}px`
+        ? height
         : gridRatio
         ? `${
-            (wrapperRef.current.offsetWidth / deviceCols -
-              remToInt(spacing)) /
+            (wrapperRef.current.offsetWidth / deviceCols - remToInt(spacing)) /
             gridRatio
           }px`
         : 'initial'
@@ -64,6 +63,7 @@ const Wrapper = styled.ul`
   flex-wrap: wrap;
   margin: calc(-1 * var(--spacing)) 0 0 calc(-1 * var(--spacing));
   width: calc(100% + var(--spacing));
+  position: relative;
 
   > * {
     width: calc(var(--width) - var(--spacing)) !important;

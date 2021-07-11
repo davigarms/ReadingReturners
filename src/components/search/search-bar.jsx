@@ -1,17 +1,12 @@
 import styled from 'styled-components'
 
 export default function SearchBar({
-  fluid,
   placeholder = 'Search...',
   onKeyPress,
   onChange,
 }) {
   return (
-    <Wrapper
-      style={{
-        '--width': fluid ? '100%' : 'initial',
-      }}
-    >
+    <Wrapper>
       <input
         type="text"
         placeholder={placeholder}
@@ -23,7 +18,9 @@ export default function SearchBar({
 }
 
 const Wrapper = styled.div`
+  width: 100%;
+
   > * {
-    width: var(--width);
+    width: 100%;
   }
 `

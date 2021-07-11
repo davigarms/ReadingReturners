@@ -34,7 +34,6 @@ export default function Index() {
             placeholder="Search for a book or an author..."
             onKeyPress={handleKeyPress}
             onChange={handleChange}
-            fluid
           />
           <SearchResults
             view={view}
