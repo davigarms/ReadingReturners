@@ -28,13 +28,15 @@ export default function Box({
       style={{
         '--color': color,
         '--background-color': backgroundColor,
-        '--background-image': backgroundImage && `url(${backgroundImage})`,
+        '--background-image': backgroundImage
+          ? `url(${backgroundImage})`
+          : 'none',
         '--background-repeat': backgroundRepeat,
         '--background-size': backgroundSize,
         '--background-position': backgroundPosition,
-        '--border-color': border && borderColor,
-        '--border-width': border && borderWidth,
-        '--border-style': border && borderStyle,
+        '--border-color': border ? borderColor : 'initial',
+        '--border-width': border ? borderWidth : 'initial',
+        '--border-style': border ? borderStyle : 'initial',
         '--padding': padding,
         '--position': position,
         '--top': top,
