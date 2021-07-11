@@ -18,7 +18,6 @@ export default function SearchResults({ view, results, hasSearched }) {
                 view={view}
                 title={result.title}
                 thumbnail={result.thumbnail}
-                padding={`0 ${SPACING_S}`}
                 author={
                   result.authors &&
                   result.authors.map((author, i, arr) =>
@@ -31,11 +30,7 @@ export default function SearchResults({ view, results, hasSearched }) {
                 }
               />
             ))
-          : hasSearched && (
-              <Box padding={`0 ${SPACING_S}`}>
-                <h6>No books found</h6>
-              </Box>
-            )}
+          : hasSearched && <h6>No books found</h6>}
       </Grid>
       <Box height={SPACING_M} />
     </Wrapper>

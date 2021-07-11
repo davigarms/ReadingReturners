@@ -45,11 +45,13 @@ export default function Index({ searchQuery = '' }) {
             onChange={handleChange}
             value={searchText}
           />
-          <SearchResults
-            view={view}
-            results={results}
-            hasSearched={hasSearched}
-          />
+          <Box padding={`0 ${SPACING_S}`}>
+            <SearchResults
+              view={view}
+              results={results}
+              hasSearched={hasSearched}
+            />
+          </Box>
         </Stack>
       </Box>
     </Container>

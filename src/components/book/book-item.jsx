@@ -1,11 +1,10 @@
 import Box from 'components/layout/box'
 import styled from 'styled-components'
 
-export default function BookItem({ view, title, author, thumbnail, padding }) {
+export default function BookItem({ view, title, author, thumbnail }) {
   return (
     <Wrapper style={{ '--display': view === 'grid' ? 'none' : 'block' }}>
       <Box
-        padding={padding}
         backgroundImage={view === 'grid' && thumbnail}
         border={view === 'grid'}
       >
