@@ -47,10 +47,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   input {
-    color: var(--color-gray1);
+    color: var(--color-black);
     font-size: var(--font-size-paragraph);
     padding: var(--spacing-xs) var(--spacing-s);
-    border: var(--border-width-hairline) solid var(--color-gray3);
+    border: var(--border-width-hairline) solid var(--color-gray2);
     border-radius: var(--radius-circle);
     ::placeholder {
       color: var(--color-gray2);
