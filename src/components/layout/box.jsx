@@ -1,37 +1,43 @@
 import styled from 'styled-components'
-import { BORDER_WIDTH_HAIRLINE } from 'styles/dictionary'
-import { COLOR_GRAY2 } from 'styles/dictionary'
+import { BORDER_WIDTH_HAIRLINE, COLOR_BLACK } from 'styles/dictionary'
 
 export default function Box({
   children,
-  color,
-  backgroundColor,
-  backgroundImage,
-  fluid,
-  padding = 0,
-  width,
-  height,
   border,
-  borderColor = COLOR_GRAY2,
-  borderWidth = BORDER_WIDTH_HAIRLINE,
+  color = COLOR_BLACK,
+  backgroundColor = 'transparent',
+  backgroundImage = '',
   borderStyle = 'solid',
+  borderColor = COLOR_BLACK,
+  borderWidth = BORDER_WIDTH_HAIRLINE,
+  padding = 0,
+  position = 'relative',
+  top = 'initial',
+  bottom = 'initial',
+  left = 'initial',
+  right = 'initial',
+  width = '100%',
+  height = 'unset',
+  textAlign = 'left',
 }) {
-  const maxWidth = fluid && width
-  width = fluid ? '100%' : width
-
   return (
     <Wrapper
       style={{
         '--color': color,
         '--background-image': backgroundImage && `url(${backgroundImage})`,
         '--background-color': backgroundColor,
-        '--max-width': maxWidth,
-        '--padding': padding,
-        '--width': width,
-        '--height': height,
         '--border-color': border && borderColor,
         '--border-width': border && borderWidth,
         '--border-style': border && borderStyle,
+        '--padding': padding,
+        '--position': position,
+        '--top': top,
+        '--bottom': bottom,
+        '--left': left,
+        '--right': right,
+        '--width': width,
+        '--height': height,
+        '--text-align': textAlign,
       }}
     >
       {children}
@@ -40,14 +46,19 @@ export default function Box({
 }
 
 const Wrapper = styled.div`
+  color: var(--color);
   background-color: var(--background-color);
   background-image: var(--background-image);
   background-repeat: no-repeat;
   background-size: cover;
-  color: var(--color);
-  max-width: var(--max-width);
+  border: var(--border-color) var(--border-width) var(--border-style);
   padding: var(--padding);
+  position: var(--position);
+  top: var(--top);
+  bottom: var(--bottom);
+  left: var(--left);
+  right: var(--right);
   width: var(--width);
   height: var(--height);
-  border: var(--border-color) var(--border-width) var(--border-style);
+  text-align: var(--text-align);
 `
