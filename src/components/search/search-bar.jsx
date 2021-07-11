@@ -4,6 +4,7 @@ export default function SearchBar({
   placeholder = 'Search...',
   onKeyPress,
   onChange,
+  value,
 }) {
   return (
     <Wrapper>
@@ -12,6 +13,7 @@ export default function SearchBar({
         placeholder={placeholder}
         onKeyPress={onKeyPress}
         onChange={onChange}
+        value={value}
       />
     </Wrapper>
   )
