@@ -1,5 +1,5 @@
 import { SPACING_M, SPACING_S } from 'styles/dictionary'
-import Grid from 'components/layout/grid'
+import GridList from 'components/layout/grid-list'
 import Box from 'components/layout/box'
 import BookItem from 'components/book/book-item'
 import styled from 'styled-components'
@@ -7,7 +7,7 @@ import styled from 'styled-components'
 export default function SearchResults({ view, results, hasSearched }) {
   return (
     <Wrapper>
-      <Grid
+      <GridList
         cols={view === 'grid' ? { xxs: 1, xs: 2, s: 5 } : 1}
         gridRatio={view === 'grid' && 2 / 3}
       >
@@ -30,8 +30,12 @@ export default function SearchResults({ view, results, hasSearched }) {
                 }
               />
             ))
-          : hasSearched && <h6>No books found</h6>}
-      </Grid>
+          : hasSearched && (
+              <li>
+                <h6>No books found</h6>
+              </li>
+            )}
+      </GridList>
       <Box height={SPACING_M} />
     </Wrapper>
   )
