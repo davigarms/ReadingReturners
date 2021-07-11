@@ -7,6 +7,9 @@ export default function Box({
   color = COLOR_BLACK,
   backgroundColor = 'transparent',
   backgroundImage = '',
+  backgroundRepeat = 'no-repeat',
+  backgroundSize = 'cover',
+  backgroundPosition = 'top center',
   borderStyle = 'solid',
   borderColor = COLOR_BLACK,
   borderWidth = BORDER_WIDTH_HAIRLINE,
@@ -24,8 +27,11 @@ export default function Box({
     <Wrapper
       style={{
         '--color': color,
-        '--background-image': backgroundImage && `url(${backgroundImage})`,
         '--background-color': backgroundColor,
+        '--background-image': backgroundImage && `url(${backgroundImage})`,
+        '--background-repeat': backgroundRepeat,
+        '--background-size': backgroundSize,
+        '--background-position': backgroundPosition,
         '--border-color': border && borderColor,
         '--border-width': border && borderWidth,
         '--border-style': border && borderStyle,
@@ -49,8 +55,9 @@ const Wrapper = styled.div`
   color: var(--color);
   background-color: var(--background-color);
   background-image: var(--background-image);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: var(--background-repeat);
+  background-size: var(--background-size);
+  background-position: var(--background-position);
   border: var(--border-color) var(--border-width) var(--border-style);
   padding: var(--padding);
   position: var(--position);
