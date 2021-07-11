@@ -13,7 +13,7 @@ const handler = async (req, res) => {
       const book = await booksModel.find({ _id })
       res.status(200).send(book)
     } else {
-      res.status(404).send([{ Message: 'Book not found' }])
+      res.status(404).send({ Message: 'Book not found' })
     }
   }
 }

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export default function BookItem({ view, title, author, thumbnail, padding }) {
   return (
-    <Wrapper style={{ '--display': view === 'list' ? 'block' : 'none' }}>
+    <Wrapper style={{ '--display': view === 'grid' ? 'none' : 'block' }}>
       <Box
         padding={padding}
         backgroundImage={view === 'grid' && thumbnail}
