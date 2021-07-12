@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { BORDER_WIDTH_HAIRLINE, COLOR_BLACK } from 'styles/dictionary'
+import { BORDER_WIDTH_HAIRLINE, COLOR_GRAY3 } from 'styles/dictionary'
 
 export default function Box({
   children,
@@ -11,7 +11,7 @@ export default function Box({
   backgroundSize = 'cover',
   backgroundPosition = 'top center',
   borderStyle = 'solid',
-  borderColor = COLOR_BLACK,
+  borderColor = COLOR_GRAY3,
   borderWidth = BORDER_WIDTH_HAIRLINE,
   borderRadius,
   padding = 0,
