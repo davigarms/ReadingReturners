@@ -11,7 +11,8 @@ import { useRouter } from 'next/router'
 export default function Index({ searchQuery = '' }) {
   const router = useRouter()
 
-  const [view, setView] = useState('grid')
+  const views = ['card', 'list']
+  const [view] = useState(views[0])
   const [hasSearched, setHasSearched] = useState(false)
   const [results, setResults] = useState([])
   const [searchText, setSearchText] = useState('')

@@ -1,15 +1,15 @@
-import { SPACING_M, SPACING_S } from 'styles/dictionary'
+import { SPACING_M } from 'styles/dictionary'
 import GridList from 'components/layout/grid-list'
 import Box from 'components/layout/box'
 import BookItem from 'components/book/book-item'
 import styled from 'styled-components'
 
-export default function SearchResults({ view, results, hasSearched }) {
+export default function SearchResults({ view = 'list', results, hasSearched }) {
   return (
     <Wrapper>
       <GridList
-        cols={view === 'grid' ? { xxs: 1, xs: 2, s: 5 } : 1}
-        gridRatio={view === 'grid' && 2 / 3}
+        cols={view === 'card' ? { xxs: 1, xs: 2, s: 5 } : 1}
+        gridRatio={view === 'card' && 2 / 3}
       >
         {results.length > 0
           ? results.map((result) => (
@@ -18,16 +18,7 @@ export default function SearchResults({ view, results, hasSearched }) {
                 view={view}
                 title={result.title}
                 thumbnail={result.thumbnail}
-                author={
-                  result.authors &&
-                  result.authors.map((author, i, arr) =>
-                    arr.length <= 1
-                      ? author
-                      : i < arr.length - 1
-                      ? `${author}, `
-                      : author
-                  )
-                }
+                author={result.authors.join(', ')}
               />
             ))
           : hasSearched && (

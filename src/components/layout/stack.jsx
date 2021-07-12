@@ -22,6 +22,6 @@ const Wrapper = styled.div`
 
   > * + * {
     margin-top: var(--spacing);
-    overflow: auto;
+    overflow: auto !important;
   }
 `
