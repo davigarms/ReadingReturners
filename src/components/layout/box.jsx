@@ -4,9 +4,9 @@ import { BORDER_WIDTH_HAIRLINE, COLOR_BLACK } from 'styles/dictionary'
 export default function Box({
   children,
   border,
-  color = COLOR_BLACK,
-  backgroundColor = 'transparent',
-  backgroundImage = '',
+  color,
+  backgroundColor,
+  backgroundImage,
   backgroundRepeat = 'no-repeat',
   backgroundSize = 'cover',
   backgroundPosition = 'top center',
@@ -15,52 +15,50 @@ export default function Box({
   borderWidth = BORDER_WIDTH_HAIRLINE,
   padding = 0,
   position = 'relative',
-  top = 'initial',
-  bottom = 'initial',
-  left = 'initial',
-  right = 'initial',
+  top,
+  bottom,
+  left,
+  right,
   width = '100%',
-  height = 'unset',
-  textAlign = 'left',
+  height,
+  textAlign,
 }) {
-  return (
-    <Wrapper
-      style={{
-        '--color': color,
-        '--background-color': backgroundColor,
-        '--background-image': backgroundImage
-          ? `url(${backgroundImage})`
-          : 'none',
-        '--background-repeat': backgroundRepeat,
-        '--background-size': backgroundSize,
-        '--background-position': backgroundPosition,
-        '--border-color': border ? borderColor : 'initial',
-        '--border-width': border ? borderWidth : 'initial',
-        '--border-style': border ? borderStyle : 'initial',
-        '--padding': padding,
-        '--position': position,
-        '--top': top,
-        '--bottom': bottom,
-        '--left': left,
-        '--right': right,
-        '--width': width,
-        '--height': height,
-        '--text-align': textAlign,
-      }}
-    >
-      {children}
-    </Wrapper>
+  const styles = {
+    '--color': color,
+    '--background-color': `${backgroundColor}`,
+    '--background': `${
+      backgroundImage
+        ? `url(${backgroundImage}) ${backgroundRepeat} ${backgroundPosition}`
+        : ''
+    }`,
+    '--background-size': backgroundImage && backgroundSize,
+    '--border': border ? `${borderWidth} ${borderStyle} ${borderColor}` : '',
+    '--padding': padding,
+    '--position': position,
+    '--top': top,
+    '--bottom': bottom,
+    '--left': left,
+    '--right': right,
+    '--width': width,
+    '--height': height,
+    '--text-align': textAlign,
+  }
+  const validStyles = Object.fromEntries(
+    Object.entries(styles).filter(
+      ([, value]) =>
+        (value && value.indexOf('undefined') < 0) || typeof value === 'number'
+    )
   )
+
+  return <Wrapper style={{ ...validStyles }}>{children}</Wrapper>
 }
 
 const Wrapper = styled.div`
   color: var(--color);
-  background-color: var(--background-color);
-  background-image: var(--background-image);
-  background-repeat: var(--background-repeat);
+  background: var(--background);
   background-size: var(--background-size);
-  background-position: var(--background-position);
-  border: var(--border-color) var(--border-width) var(--border-style);
+  background-color: var(--background-color);
+  border: var(--border);
   padding: var(--padding);
   position: var(--position);
   top: var(--top);
