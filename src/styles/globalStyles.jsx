@@ -59,6 +59,18 @@ const GlobalStyle = createGlobalStyle`
       outline: none;
     }
   }
+
+  .font-size-xs {font-size: var(--font-size-xs)}
+  .font-size-s  {font-size: var(--font-size-s)}
+  .font-size-m  {font-size: var(--font-size-m)}
+  .font-size-l  {font-size: var(--font-size-l)}
+  .font-size-xl {font-size: var(--font-size-xl)}
+  .font-size-h6 {font-size: var(--font-size-h6)}
+  .font-size-h5 {font-size: var(--font-size-h5)}
+  .font-size-h4 {font-size: var(--font-size-h4)}
+  .font-size-h3 {font-size: var(--font-size-h3)}
+  .font-size-h2 {font-size: var(--font-size-h2)}
+  .font-size-h1 {font-size: var(--font-size-h1)}
 `
 
 export default GlobalStyle
